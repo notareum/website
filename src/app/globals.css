@@ -2,26 +2,252 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Light theme (default) ─── */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --text: #111827;
+  --text-body: #374151;
+  --text-muted: #6b7280;
+  --brand: #1a56db;
+  --brand-hover: #1546b3;
+  --accent: #0ea5e9;
+  --border: #e5e7eb;
+  --code-bg: #f5f6fa;
+  --code-text: #1a56db;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* ─── Dark theme ─── */
+.dark {
+  --bg: #0a0e1a;
+  --bg-alt: #0f1420;
+  --text: #f9fafb;
+  --text-body: #d1d5db;
+  --text-muted: #9ca3af;
+  --brand: #3b82f6;
+  --brand-hover: #2563eb;
+  --accent: #22d3ee;
+  --border: rgba(255, 255, 255, 0.1);
+  --code-bg: #0d1117;
+  --code-text: #e2e8f0;
+  --card-bg: rgba(15, 20, 32, 0.8);
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--bg);
+  color: var(--text-body);
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ─── Tag / label ─── */
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Button styles (pill shape from V5/V7) ─── */
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 14px 0 rgba(26, 86, 219, 0.25);
+}
+.btn-primary:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(26, 86, 219, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-body);
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+.dark .btn-secondary:hover {
+  color: #ffffff;
+}
+
+/* ─── Card styles ─── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.dark .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Code block ─── */
+pre, code {
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+pre {
+  overflow-x: auto;
+  background: var(--code-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--code-text);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ─── Segmented nav (V7 pill nav) ─── */
+.segmented-nav {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.segmented-nav button {
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  padding: 0.5rem 1.125rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.segmented-nav button[data-active="true"] {
+  background: var(--bg);
+  color: var(--brand);
+}
+
+/* ─── DNA tag (V7 floating pill) ─── */
+.dna-tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  padding: 4px 12px 4px 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  gap: 8px;
+}
+.dark .dna-tag {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Hero section blue variant (V5 - for protocol page) ─── */
+.hero-blue {
+  background-color: #1a56db;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.hero-blue .hero-shape-1 {
+  position: absolute;
+  top: 0; right: 0;
+  width: 60%; height: 100%;
+  background: linear-gradient(225deg, rgba(6, 182, 212, 0.2) 0%, rgba(26, 86, 219, 0) 50%);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+.hero-blue .hero-shape-2 {
+  position: absolute;
+  top: 20%; left: -10%;
+  width: 50%; height: 100%;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(26, 86, 219, 0) 60%);
+  clip-path: polygon(0 0, 100% 50%, 50% 100%, 0 100%);
+}
+
+/* ─── Timeline (about page) ─── */
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: -24px;
+  width: 2px;
+  background: var(--border);
+}
+
+/* ─── Section separator dots (V7) ─── */
+.grid-separator {
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.grid-separator > * {
+  background: var(--bg);
 }
