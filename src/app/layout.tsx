@@ -1,23 +1,32 @@
-import './globals.css'
+import './globals.css';
+import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
+import ThemeProvider from '@/components/ThemeProvider';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
-import { Inter } from 'next/font/google'
-import type { Metadata } from 'next'
-
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: 'Notareum - Streamlining Blockchain File Sharing and Collaboration',
-  description: 'Notareum Introduces a new UTI to streamline sharing blockchain based files using the .nota File Extension',
-}
+  title: 'Notareum - The Trust Layer for Web3',
+  description:
+    'Notareum is an open protocol for sharing blockchain resources safely. One file format. Cryptographic verification. Every chain.',
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`}>
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
-  )
+  );
 }
