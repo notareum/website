@@ -4,7 +4,7 @@
 
 1. **Create an Engaging Landing Page:**
 
-   - Develop a visually appealing and engaging landing page for Notareum that captures the attention of visitors.
+   - Develop a visually appealing and engaging landing page for Notareum that communicates to the attention of visitors.
 2. **Prioritize User Experience (UX):**
 
    - Ensure a seamless and intuitive user experience through thoughtful design and navigation.
