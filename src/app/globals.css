@@ -75,12 +75,23 @@ body {
   gap: 0.5rem;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 14px 0 rgba(26, 86, 219, 0.25);
+  box-shadow: 0 4px 14px 0 rgba(58, 111, 229, 0.25);
+}
+.btn-primary::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 2px;
+  flex-shrink: 0;
 }
 .btn-primary:hover {
   background: var(--brand-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px 0 rgba(26, 86, 219, 0.35);
+  box-shadow: 0 6px 20px 0 rgba(58, 111, 229, 0.35);
 }
 
 .btn-secondary {
@@ -96,6 +107,17 @@ body {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+}
+.btn-secondary::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 2px;
+  flex-shrink: 0;
 }
 .btn-secondary:hover {
   border-color: var(--brand);
