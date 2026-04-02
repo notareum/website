@@ -3,27 +3,27 @@ import ProtocolArchitecture from '@/components/ProtocolArchitecture';
 
 const principles = [
   {
-    icon: '⬡',
+    icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>),
     title: 'Chain Agnostic',
     body: 'Ethereum, Bitcoin, Solana, Cosmos, L2s, and any future chain. One format covers all.',
   },
   {
-    icon: '{ }',
+    icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1" /><path d="M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1" /></svg>),
     title: 'Human Readable',
     body: 'JSON-based structure that both machines and humans can parse and inspect.',
   },
   {
-    icon: '🔐',
+    icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><circle cx="12" cy="16" r="1" /></svg>),
     title: 'Cryptographically Verifiable',
     body: 'Digital signatures prove ownership and authenticity of every resource.',
   },
   {
-    icon: '↗',
+    icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6" /><path d="M10 14L21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>),
     title: 'Extensible',
     body: 'Schema versioning and optional fields allow upgrades without breaking compatibility.',
   },
   {
-    icon: '◎',
+    icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" /><line x1="16" y1="8" x2="2" y2="22" /><line x1="17.5" y1="15" x2="9" y2="15" /></svg>),
     title: 'Lightweight',
     body: 'Typical .nota files are 1 to 2KB. Share via messaging apps, email, QR codes, or NFC.',
   },
@@ -42,17 +42,58 @@ const verificationLevels = [
   {
     level: 'Basic',
     color: '#10b981',
+    badgeBg: '#10b981',
+    entityType: 'Addresses & Resources',
     desc: 'Automated on-chain existence check. Confirms the address or contract exists on the specified chain. No human review.',
+    badge: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="11" fill="#10b981" />
+        <path d="M8 12l3 3 5-5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    example: {
+      name: '0x7a2b...9f3e',
+      label: 'Personal Wallet',
+      meta: 'Ethereum Mainnet',
+    },
   },
   {
     level: 'Enhanced',
     color: '#3b82f6',
+    badgeBg: '#3b82f6',
+    entityType: 'Projects & Protocols',
     desc: 'Community validator review. Multiple validators independently verify the resource against external data (project websites, social profiles, contract source code).',
+    badge: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 13.14l-5-4.87 6.91-1.01L12 1z" fill="#3b82f6" />
+        <path d="M9.5 12l2 2 3.5-3.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    example: {
+      name: 'Uniswap V3 Router',
+      label: 'Verified Contract',
+      meta: 'Ethereum · 8 validators',
+    },
   },
   {
     level: 'Institutional',
     color: '#a855f7',
+    badgeBg: '#a855f7',
+    entityType: 'Regulated Entities & Organizations',
     desc: 'KYC-linked verification. The resource owner provides identity documentation reviewed by accredited validators. Suitable for regulated entities.',
+    badge: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M12 1l2.39 4.84 5.34.78-3.87 3.77.91 5.34L12 13.27l-4.77 2.46.91-5.34-3.87-3.77 5.34-.78L12 1z" fill="#a855f7" />
+        <rect x="6" y="16" width="12" height="7" rx="1" fill="#a855f7" />
+        <path d="M9 19.5h6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M9.5 12l2 2 3-3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    example: {
+      name: 'Notareum Treasury',
+      label: 'Institutional Wallet',
+      meta: 'Ethereum · KYC verified',
+    },
   },
 ];
 
@@ -97,12 +138,12 @@ export default function ProtocolPage() {
         <div className="hero-shape-1" />
         <div className="hero-shape-2" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Protocol Specification</div>
+          <div className="label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Notareum Protocol</div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             The <span style={{ color: '#22d3ee' }}>.nota</span> File Format
           </h1>
           <p className="text-xl text-white/80 leading-relaxed">
-            A universal, cryptographically verifiable container for blockchain resources. Chain-agnostic. Human-readable. Under 2KB.
+            A universal, cryptographically verifiable container for blockchain resource sharing. Chain-agnostic. Human-readable. Under 2KB.
           </p>
         </div>
       </section>
@@ -120,7 +161,7 @@ export default function ProtocolPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {principles.map((p, i) => (
               <div key={i} className="card rounded-xl p-6 text-center">
-                <div className="text-2xl mb-3 font-mono" style={{ color: 'var(--brand)' }}>{p.icon}</div>
+                <div className="mb-3" style={{ color: 'var(--brand)' }}>{p.icon}</div>
                 <h3 className="font-semibold mb-2 text-sm" style={{ color: 'var(--text)' }}>{p.title}</h3>
                 <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{p.body}</p>
               </div>
@@ -208,11 +249,62 @@ export default function ProtocolPage() {
             </div>
             <div className="space-y-4">
               {verificationLevels.map((v, i) => (
-                <div key={i} className="card rounded-xl p-5">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: `color-mix(in srgb, ${v.color} 15%, transparent)`, color: v.color }}>{v.level}</span>
+                <div key={i} className="card rounded-xl p-5" style={{ borderLeft: `3px solid ${v.color}` }}>
+                  <div className="flex items-center gap-3 mb-1">
+                    {v.badge}
+                    <span className="font-semibold" style={{ color: 'var(--text)' }}>{v.level}</span>
+                    <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `color-mix(in srgb, ${v.color} 12%, transparent)`, color: v.color }}>{v.entityType}</span>
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{v.desc}</p>
+                  <p className="text-sm leading-relaxed mt-2" style={{ color: 'var(--text-muted)' }}>{v.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Client render examples */}
+          <div className="mt-4">
+            <div className="text-center mb-10">
+              <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--text)' }}>How clients render verification badges</h3>
+              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Example of how wallets, explorers, and dApps display each verification level to end users.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {verificationLevels.map((v, i) => (
+                <div key={i} className="card rounded-xl overflow-hidden">
+                  {/* Simulated wallet UI header */}
+                  <div className="px-5 py-3 flex items-center gap-2 text-xs font-medium" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg>
+                    Wallet Client Preview
+                  </div>
+                  {/* Simulated resource card */}
+                  <div className="p-5">
+                    <div className="flex items-start gap-3">
+                      {/* Avatar placeholder */}
+                      <div className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-white text-xs font-bold" style={{ background: v.color }}>
+                        {v.example.name.charAt(0)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-semibold text-sm truncate" style={{ color: 'var(--text)' }}>{v.example.name}</span>
+                          {v.badge}
+                        </div>
+                        <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{v.example.label}</div>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between py-2.5 px-3 rounded-lg text-xs" style={{ background: `color-mix(in srgb, ${v.color} 8%, var(--bg-alt))`, border: `1px solid color-mix(in srgb, ${v.color} 20%, transparent)` }}>
+                      <span style={{ color: 'var(--text-muted)' }}>{v.example.meta}</span>
+                      <span className="font-medium flex items-center gap-1" style={{ color: v.color }}>
+                        {v.badge}
+                        {v.level} Verified
+                      </span>
+                    </div>
+                    {/* Trust indicator bar */}
+                    <div className="mt-3 flex items-center gap-2">
+                      <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: 'var(--border)' }}>
+                        <div className="h-full rounded-full" style={{ width: i === 0 ? '33%' : i === 1 ? '66%' : '100%', background: v.color }} />
+                      </div>
+                      <span className="text-[10px] font-medium" style={{ color: v.color }}>Trust {i === 0 ? 'L1' : i === 1 ? 'L2' : 'L3'}</span>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
