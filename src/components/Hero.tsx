@@ -8,22 +8,23 @@ export default function Hero() {
     >
       {/* Hero content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 lg:pt-24 relative">
-        <div className="relative max-w-[1000px]">
-          <h1
-            className="text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.05em] mb-6"
-            style={{ color: 'var(--brand)' }}
-          >
-            The trust layer
-            <br />
-            for Web3
-          </h1>
-          <p className="text-xl md:text-2xl max-w-[580px] tracking-[-0.02em]" style={{ color: 'var(--brand)' }}>
-            An open protocol for sharing blockchain resources safely using the verifiable{' '}
-            <span className="font-mono">.nota</span> file format.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+          <div className="relative">
+            <h1
+              className="text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.05em] mb-6"
+              style={{ color: 'var(--brand)' }}
+            >
+              The trust layer
+              <br />
+              for Web3
+            </h1>
+            <p className="text-xl md:text-2xl max-w-[580px] tracking-[-0.02em]" style={{ color: 'var(--brand)' }}>
+              An open protocol for sharing blockchain resources safely using the verifiable{' '}
+              <span className="font-mono">.nota</span> file format.
+            </p>
 
-          {/* DNA floating pill tags (V7 style) */}
-          <div className="hidden lg:block">
+            {/* DNA floating pill tags (V7 style) */}
+            <div className="hidden lg:block">
             {/* Tag 1 */}
             <div className="dna-tag absolute -top-4 right-[18%]">
               <div
@@ -71,6 +72,44 @@ export default function Hero() {
               <div className="flex flex-col text-[9px] leading-tight tracking-wide" style={{ color: 'var(--brand)' }}>
                 <span>cryptographic</span>
                 <span style={{ color: 'var(--text-muted)' }}>verification engine</span>
+              </div>
+            </div>
+          </div>          </div>
+          {/* end left column */}
+          {/* .nota spec card (V5 style) — right column */}
+          <div className="hidden lg:block relative pt-8">
+            <div
+              className="rounded-xl overflow-hidden"
+              style={{
+                background: 'var(--card-bg)',
+                border: '1px solid var(--border)',
+                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.08)',
+              }}
+            >
+              <div className="flex items-center justify-between px-5 py-3" style={{ borderBottom: '1px solid var(--border)' }}>
+                <span className="text-xs uppercase tracking-widest font-medium" style={{ color: 'var(--text-muted)' }}>.nota format spec</span>
+                <span className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>v1.0</span>
+              </div>
+              <pre className="px-5 py-4 text-[13px] leading-[1.7] overflow-x-auto" style={{ color: 'var(--code-text)', background: 'var(--code-bg)', margin: 0 }}>
+                <code>{`{
+  "type": "address",
+  "chain": "ethereum",
+  "resource": {
+    "id": "0x7a2b...9f3e",
+    "name": "Treasury",
+    "alias": "treasury.nota"
+  },
+  "verification": {
+    "status": "verified",
+    "level": "institutional"
+  },
+  "signature": "ecdsa:secp256k1"
+}`}</code>
+              </pre>
+              <div className="flex gap-2 px-5 py-3" style={{ borderTop: '1px solid var(--border)' }}>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--brand) 10%, transparent)', color: 'var(--brand)' }}>Signed</span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, #10b981 10%, transparent)', color: '#10b981' }}>Verified</span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--accent) 10%, transparent)', color: 'var(--accent)' }}>1.2 KB</span>
               </div>
             </div>
           </div>
