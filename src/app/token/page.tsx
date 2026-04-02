@@ -11,22 +11,22 @@ const distribution = [
 
 const utility = [
   {
-    icon: '🔒',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>),
     title: 'Staking & Validation',
     body: 'Validators stake $NOTA to participate in the verification network. Higher stakes unlock access to higher-value verification tasks and greater reward multipliers.',
   },
   {
-    icon: '◎',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M16 8l-4 4-4-4" /><path d="M12 12v6" /></svg>),
     title: 'Verification Fees',
     body: 'Users pay small $NOTA fees to submit resources for verification. Fees are distributed to validators who process the verification.',
   },
   {
-    icon: '⚖',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l7.794 4.5v9L12 21l-7.794-4.5v-9L12 3z" /><path d="M12 12l7.794-4.5" /><path d="M12 12v9" /><path d="M12 12L4.206 7.5" /></svg>),
     title: 'Governance',
     body: '$NOTA holders vote on protocol upgrades, parameter changes, fee structures, and treasury allocation. One token, one vote, with delegation support.',
   },
   {
-    icon: '⬆',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" /></svg>),
     title: 'Reputation & Trust Scoring',
     body: 'Long-term stakers build on-chain reputation scores that influence their weight in verification consensus and governance decisions.',
   },
@@ -45,12 +45,12 @@ export default function TokenPage() {
       {/* Hero */}
       <section className="py-24 lg:py-32 text-center" style={{ background: 'var(--bg-alt)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="label mb-4">Native Token</div>
+          <div className="label mb-4">Notareum NOTA Token</div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6" style={{ color: 'var(--text)' }}>
             <span style={{ color: 'var(--brand)' }}>$NOTA</span>
           </h1>
           <p className="text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-            The native token powering verification, governance, and protocol incentives across the Notareum network.
+            The utility token powering verification, governance, and protocol incentives across the Notareum network.
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function TokenPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {utility.map((u, i) => (
               <div key={i} className="card rounded-xl p-6">
-                <div className="text-3xl mb-4">{u.icon}</div>
+                <div className="mb-4" style={{ color: 'var(--brand)' }}>{u.icon}</div>
                 <h3 className="font-semibold mb-3" style={{ color: 'var(--text)' }}>{u.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{u.body}</p>
               </div>

@@ -2,17 +2,17 @@ import Link from 'next/link';
 
 const values = [
   {
-    icon: '◎',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M18 12H6" /><path d="M12 6v12" /></svg>),
     title: 'Open Standard, Not a Walled Garden',
     body: 'The .nota format is open-source and free to implement. No licensing fees. No gatekeeping. The protocol succeeds when everyone adopts it, not when we control it.',
   },
   {
-    icon: '⊞',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" /></svg>),
     title: 'Security Through Transparency',
     body: 'Every verification decision is on-chain. Every validator stake is public. Every slashing event is auditable. Trust is earned through visibility, not authority.',
   },
   {
-    icon: '⬡',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>),
     title: 'Practical Over Theoretical',
     body: 'We ship tools that solve real problems today: address verification, contract authenticity, resource portability. The research informs the engineering, not the other way around.',
   },
@@ -109,7 +109,7 @@ export default function AboutPage() {
             About <span style={{ color: 'var(--brand)' }}>Notareum</span>
           </h1>
           <p className="text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-            Building the trust infrastructure that Web3 needs.
+            Building the trust infrastructure that Web3 needs for Mainstream Adoption.
           </p>
         </div>
       </section>
@@ -123,10 +123,10 @@ export default function AboutPage() {
           </div>
           <div className="card rounded-2xl p-8 lg:p-12 space-y-5 leading-relaxed text-base lg:text-lg" style={{ color: 'var(--text-body)' }}>
             <p>
-              Blockchain technology promised trustless transactions, but the human layer remains dangerously fragile. Users still copy-paste addresses from unverified sources, interact with unaudited contracts, and send irreversible transactions based on nothing more than a screenshot or a chat message.
+              Blockchain technology promised trustless transactions, but the human layer remains dangerously fragile. Users still copy-paste addresses from unverified sources, interact with contracts, and send irreversible transactions based on nothing more than a hex strings.
             </p>
             <p>
-              Notareum exists to close this gap. We are building the trust layer that sits between people and the blockchain, making every resource shareable, verifiable, and human-readable.
+              Notareum exists to close this gap. We are building the trust layer that sits between people and the blockchain, making every resource shareable, verifiable, and human-computer-readable.
             </p>
             <p>
               Our goal is not to replace existing infrastructure. ENS, WalletConnect, and chain-specific tools serve important roles. Notareum is the connective tissue: a universal format that works across all chains, all wallets, and all use cases.
@@ -145,7 +145,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
               <div key={i} className="card rounded-xl p-8">
-                <div className="text-3xl mb-4" style={{ color: 'var(--brand)' }}>{v.icon}</div>
+                <div className="mb-4" style={{ color: 'var(--brand)' }}>{v.icon}</div>
                 <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text)' }}>{v.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{v.body}</p>
               </div>

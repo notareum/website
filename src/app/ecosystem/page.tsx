@@ -15,22 +15,22 @@ const ecosystemStats = [
 
 const useCaseShowcase = [
   {
-    icon: '⊞',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg>),
     title: 'Secure Payroll',
     body: 'A DAO treasurer creates .nota files for each contributor\'s wallet. Verified addresses with human-readable names eliminate the risk of sending funds to the wrong address during bulk payroll.',
   },
   {
-    icon: '◆',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94" /></svg>),
     title: 'NFT Provenance',
     body: 'An artist signs their collection contract as a .nota file and shares it on social media. Collectors verify the contract is authentic before minting, preventing fake collection scams.',
   },
   {
-    icon: '⬡',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3l5 5-5 5" /><path d="M21 8H9" /><path d="M8 21l-5-5 5-5" /><path d="M3 16h12" /></svg>),
     title: 'Cross-Chain Bridging',
     body: 'A user creates a .nota file containing their addresses on Ethereum and Solana. The bridge protocol reads both addresses from a single file, reducing errors in cross-chain transfers.',
   },
   {
-    icon: '◉',
+    icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18" /><path d="M5 21V7l8-4v18" /><path d="M19 21V11l-6-4" /><path d="M9 9v.01" /><path d="M9 12v.01" /><path d="M9 15v.01" /><path d="M9 18v.01" /></svg>),
     title: 'Institutional Custody',
     body: 'A fund manager shares .nota files with institutional-level verification (KYC-linked) with auditors and regulators. Each file contains the wallet address, verification proof, and compliance metadata.',
   },
@@ -177,7 +177,7 @@ export default function EcosystemPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {useCaseShowcase.map((u, i) => (
               <div key={i} className="card rounded-xl p-8">
-                <div className="text-4xl mb-4" style={{ color: 'var(--brand)' }}>{u.icon}</div>
+                <div className="mb-4" style={{ color: 'var(--brand)' }}>{u.icon}</div>
                 <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text)' }}>{u.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{u.body}</p>
               </div>
