@@ -1,15 +1,16 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const navLinks = [
   { href: '/protocol', label: 'Protocol' },
   { href: '/developers', label: 'Developers' },
   { href: '/ecosystem', label: 'Ecosystem' },
-  { href: '/token', label: 'Token' },
+  { href: '/token', label: '$NOTA' },
   { href: '/whitepaper', label: 'Whitepaper' },
 ];
 
