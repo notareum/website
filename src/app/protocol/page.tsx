@@ -59,13 +59,13 @@ const verificationLevels = [
   },
   {
     level: 'Enhanced',
-    color: '#3b82f6',
-    badgeBg: '#3b82f6',
+    color: '#3A6FE5',
+    badgeBg: '#3A6FE5',
     entityType: 'Projects & Protocols',
     desc: 'Community validator review. Multiple validators independently verify the resource against external data (project websites, social profiles, contract source code).',
     badge: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 13.14l-5-4.87 6.91-1.01L12 1z" fill="#3b82f6" />
+        <path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 13.14l-5-4.87 6.91-1.01L12 1z" fill="#3A6FE5" />
         <path d="M9.5 12l2 2 3.5-3.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
@@ -140,7 +140,7 @@ export default function ProtocolPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Notareum Protocol</div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            The <span style={{ color: '#22d3ee' }}>.nota</span> File Format
+            The <span style={{ color: '#93B8FF' }}>.nota</span> File Format
           </h1>
           <p className="text-xl text-white/80 leading-relaxed">
             A universal, cryptographically verifiable container for blockchain resource sharing. Chain-agnostic. Human-readable. Under 2KB.

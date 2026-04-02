@@ -9,12 +9,12 @@
   --text: #111827;
   --text-body: #374151;
   --text-muted: #6b7280;
-  --brand: #1a56db;
-  --brand-hover: #1546b3;
-  --accent: #0ea5e9;
+  --brand: #3A6FE5;
+  --brand-hover: #2E59BF;
+  --accent: #3A6FE5;
   --border: #e5e7eb;
   --code-bg: #f5f6fa;
-  --code-text: #1a56db;
+  --code-text: #3A6FE5;
   --card-bg: #ffffff;
   --card-border: #e5e7eb;
 }
@@ -26,9 +26,9 @@
   --text: #f9fafb;
   --text-body: #d1d5db;
   --text-muted: #9ca3af;
-  --brand: #3b82f6;
-  --brand-hover: #2563eb;
-  --accent: #22d3ee;
+  --brand: #6B93EB;
+  --brand-hover: #3A6FE5;
+  --accent: #6B93EB;
   --border: rgba(255, 255, 255, 0.1);
   --code-bg: #0d1117;
   --code-text: #e2e8f0;
@@ -208,7 +208,7 @@ pre {
 
 /* ─── Hero section blue variant (V5 - for protocol page) ─── */
 .hero-blue {
-  background-color: #1a56db;
+  background-color: #3A6FE5;
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -217,14 +217,14 @@ pre {
   position: absolute;
   top: 0; right: 0;
   width: 60%; height: 100%;
-  background: linear-gradient(225deg, rgba(6, 182, 212, 0.2) 0%, rgba(26, 86, 219, 0) 50%);
+  background: linear-gradient(225deg, rgba(107, 147, 235, 0.25) 0%, rgba(58, 111, 229, 0) 50%);
   clip-path: polygon(100% 0, 100% 100%, 0 0);
 }
 .hero-blue .hero-shape-2 {
   position: absolute;
   top: 20%; left: -10%;
   width: 50%; height: 100%;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(26, 86, 219, 0) 60%);
+  background: linear-gradient(135deg, rgba(107, 147, 235, 0.2) 0%, rgba(58, 111, 229, 0) 60%);
   clip-path: polygon(0 0, 100% 50%, 50% 100%, 0 100%);
 }
 

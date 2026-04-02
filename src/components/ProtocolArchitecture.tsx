@@ -33,7 +33,7 @@ export default function ProtocolArchitecture() {
           <div className="hidden lg:block w-[100px] border-t-2 border-dashed mx-4" style={{ borderColor: 'var(--border)' }} />
 
           {/* Center node - blue */}
-          <div className="bg-brand text-white rounded-xl p-6 w-full max-w-[280px] shadow-[0_10px_30px_-8px_rgba(26,86,219,0.25)] relative z-10">
+          <div className="bg-brand text-white rounded-xl p-6 w-full max-w-[280px] shadow-[0_10px_30px_-8px_rgba(58,111,229,0.25)] relative z-10">
             <div className="text-[0.7rem] uppercase tracking-widest mb-3 opacity-70">
               The Core Engine
             </div>

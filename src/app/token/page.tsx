@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 const distribution = [
-  { label: 'Ecosystem & Validators', pct: '35%', vesting: '4-year linear unlock', color: '#1a56db' },
-  { label: 'Protocol Development', pct: '20%', vesting: '3-year cliff + linear', color: '#0ea5e9' },
-  { label: 'Community & Grants', pct: '15%', vesting: 'Ongoing distribution', color: '#06b6d4' },
+  { label: 'Ecosystem & Validators', pct: '35%', vesting: '4-year linear unlock', color: '#3A6FE5' },
+  { label: 'Protocol Development', pct: '20%', vesting: '3-year cliff + linear', color: '#6B93EB' },
+  { label: 'Community & Grants', pct: '15%', vesting: 'Ongoing distribution', color: '#93B8FF' },
   { label: 'Team & Advisors', pct: '15%', vesting: '1-year cliff, 3-year vest', color: '#7c3aed' },
   { label: 'Liquidity & Partnerships', pct: '10%', vesting: 'At launch + 2-year vest', color: '#db2777' },
   { label: 'Reserve', pct: '5%', vesting: 'DAO-controlled', color: '#d97706' },

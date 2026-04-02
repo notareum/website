@@ -11,13 +11,13 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: '#1a56db',
-          hover: '#1546b3',
-          light: '#3b82f6',
+          DEFAULT: '#3A6FE5',
+          hover: '#2E59BF',
+          light: '#6B93EB',
         },
         accent: {
-          DEFAULT: '#0ea5e9',
-          light: '#22d3ee',
+          DEFAULT: '#3A6FE5',
+          light: '#6B93EB',
         },
         surface: {
           DEFAULT: '#ffffff',
