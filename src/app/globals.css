@@ -9,7 +9,13 @@
   --text: #111827;
   --text-body: #374151;
   --text-muted: #6b7280;
+  --slate: #64748b;
+  --slate-soft: #94a3b8;
+  --brand-strong: #2e59bf;
   --brand: #3A6FE5;
+  --brand-soft: #6b93eb;
+  --brand-pale: #93b8ff;
+  --brand-fog: #dce7ff;
   --brand-hover: #2E59BF;
   --accent: #3A6FE5;
   --border: #e5e7eb;
@@ -26,7 +32,13 @@
   --text: #f9fafb;
   --text-body: #d1d5db;
   --text-muted: #9ca3af;
+  --slate: #94a3b8;
+  --slate-soft: #64748b;
+  --brand-strong: #93b1f1;
   --brand: #6B93EB;
+  --brand-soft: #a9c1f5;
+  --brand-pale: #c9d7fb;
+  --brand-fog: rgba(107, 147, 235, 0.18);
   --brand-hover: #3A6FE5;
   --accent: #6B93EB;
   --border: rgba(255, 255, 255, 0.1);
@@ -125,6 +137,22 @@ body {
   transform: translateY(-1px);
 }
 .dark .btn-secondary:hover {
+  color: #ffffff;
+}
+
+.btn-secondary-fill-hover {
+  background: var(--bg);
+  color: var(--brand);
+  border-color: var(--border);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+.btn-secondary-fill-hover:hover {
+  background: var(--brand);
+  color: #ffffff;
+  border-color: var(--brand);
+  box-shadow: 0 6px 20px 0 rgba(58, 111, 229, 0.25);
+}
+.dark .btn-secondary-fill-hover:hover {
   color: #ffffff;
 }
 
