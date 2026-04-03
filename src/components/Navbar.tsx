@@ -84,7 +84,7 @@ export default function Navbar() {
               type="button"
               className="btn-secondary btn-secondary-fill-hover text-sm justify-center whitespace-nowrap"
             >
-              Launch App
+              Launch dApp
             </button>
           </div>
 
@@ -132,7 +132,7 @@ export default function Navbar() {
                   </button>
                 )}
                 <button type="button" className="btn-primary w-full text-sm justify-center">
-                  Launch App
+                  Launch dApp
                 </button>
               </div>
             </div>
