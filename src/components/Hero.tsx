@@ -107,9 +107,9 @@ export default function Hero() {
 }`}</code>
               </pre>
               <div className="flex gap-2 px-5 py-3" style={{ borderTop: '1px solid var(--border)' }}>
-                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--brand) 10%, transparent)', color: 'var(--brand)' }}>Signed</span>
-                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, #10b981 10%, transparent)', color: '#10b981' }}>Verified</span>
-                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--accent) 10%, transparent)', color: 'var(--accent)' }}>1.2 KB</span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--slate) 12%, transparent)', color: 'var(--slate)' }}>Signed</span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--brand) 12%, transparent)', color: 'var(--brand-strong)' }}>Verified</span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--brand-soft) 14%, transparent)', color: 'var(--brand-soft)' }}>1.2 KB</span>
               </div>
             </div>
           </div>

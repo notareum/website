@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 const footerLinks = {
@@ -38,7 +39,7 @@ export default function Footer() {
           {/* Brand + newsletter */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-6 h-6 rounded-sm flex-shrink-0" style={{ border: '2px solid var(--accent)' }} />
+              <Image src="/logo.png" alt="Notareum" width={48} height={48} className="flex-shrink-0" />
               <span className="font-semibold text-[0.95rem] tracking-tight" style={{ color: 'var(--text)' }}>Notareum</span>
             </Link>
             <p className="text-sm mb-6 leading-relaxed max-w-xs" style={{ color: 'var(--text-muted)' }}>

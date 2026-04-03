@@ -1,10 +1,10 @@
 'use client';
 
 const distribution = [
-  { label: 'Ecosystem & Grants', pct: 40, color: 'var(--brand)' },
-  { label: 'Core Contributors', pct: 25, color: 'var(--accent)' },
-  { label: 'Treasury', pct: 20, color: '#14b8a6' },
-  { label: 'Public Distribution', pct: 15, color: 'color-mix(in srgb, var(--accent) 40%, transparent)' },
+  { label: 'Ecosystem & Grants', pct: 40, color: 'var(--brand-strong)' },
+  { label: 'Core Contributors', pct: 25, color: 'var(--brand)' },
+  { label: 'Treasury', pct: 20, color: 'var(--brand-soft)' },
+  { label: 'Public Distribution', pct: 15, color: 'var(--slate)' },
 ];
 
 export default function TokenSection() {
@@ -26,12 +26,12 @@ export default function TokenSection() {
             <ul className="space-y-4">
               {[
                 {
-                  color: 'var(--accent)',
+                  color: 'var(--brand-soft)',
                   title: 'Node Staking',
                   desc: 'Validators stake $NOTA to participate in the decentralized verification network.',
                 },
                 {
-                  color: '#14b8a6',
+                  color: 'var(--slate)',
                   title: 'Network Fees',
                   desc: 'A micro-fee is burned for every complex cross-chain proof generated.',
                 },
