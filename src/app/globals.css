@@ -61,7 +61,13 @@ body {
   color: var(--text-body);
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
   min-height: 100vh;
+  overflow-x: clip;
   transition: background-color 0.2s, color 0.2s;
+}
+
+img,
+svg {
+  max-width: 100%;
 }
 
 /* ─── Tag / label ─── */
@@ -84,6 +90,7 @@ body {
   transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
   border: none;
@@ -117,6 +124,7 @@ body {
   transition: border-color 0.2s, color 0.2s, transform 0.1s;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
 }
@@ -168,6 +176,100 @@ body {
 }
 .dark .card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.page-shell,
+.page-shell-narrow,
+.page-hero-shell {
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.page-shell {
+  max-width: 80rem;
+}
+
+.page-shell-narrow {
+  max-width: 72rem;
+}
+
+.page-hero-shell {
+  max-width: 56rem;
+}
+
+.page-section {
+  padding: 4rem 0;
+}
+
+.page-section-lg {
+  padding: 4.5rem 0;
+}
+
+.page-hero {
+  padding: 5rem 0 5.5rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: clamp(2.85rem, 10vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.page-title-token {
+  font-size: clamp(3.75rem, 18vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.page-copy {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  .page-shell,
+  .page-shell-narrow,
+  .page-hero-shell {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .page-section {
+    padding: 5rem 0;
+  }
+
+  .page-section-lg {
+    padding: 5.5rem 0;
+  }
+
+  .page-hero {
+    padding: 6rem 0 6.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-shell,
+  .page-shell-narrow,
+  .page-hero-shell {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .page-section {
+    padding: 7rem 0;
+  }
+
+  .page-section-lg {
+    padding: 8rem 0;
+  }
+
+  .page-hero {
+    padding: 8rem 0;
+  }
 }
 
 /* ─── Code block ─── */
