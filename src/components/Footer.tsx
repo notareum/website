@@ -33,11 +33,11 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-alt)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
         {/* Top: logo + newsletter + links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
           {/* Brand + newsletter */}
-          <div className="col-span-2">
+          <div className="sm:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <Image src="/logo.png" alt="Notareum" width={48} height={48} className="flex-shrink-0" />
               <span className="font-semibold text-[0.95rem] tracking-tight" style={{ color: 'var(--text)' }}>Notareum</span>
@@ -45,7 +45,7 @@ export default function Footer() {
             <p className="text-sm mb-6 leading-relaxed max-w-xs" style={{ color: 'var(--text-muted)' }}>
               The trust layer for Web3. Open protocol for verified blockchain resource sharing.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <a href="https://twitter.com/notareumnota" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="transition-colors" style={{ color: 'var(--text-muted)' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
@@ -85,11 +85,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderTop: '1px solid var(--border)' }}>
+        <div className="mt-16 flex flex-col items-center justify-between gap-3 pt-6 sm:flex-row sm:items-center" style={{ borderTop: '1px solid var(--border)' }}>
           <p className="text-sm font-mono" style={{ color: 'var(--text-muted)' }}>
             &copy; 2026 Notareum Labs
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <Link href="/privacy" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>
               Privacy
             </Link>

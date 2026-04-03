@@ -49,21 +49,21 @@ export default function TokenPage() {
   return (
     <div style={{ background: 'var(--bg)' }}>
       {/* Hero */}
-      <section className="py-24 lg:py-32 text-center" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-hero" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-hero-shell">
           <div className="label mb-4">Notareum NOTA Token</div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6" style={{ color: 'var(--text)' }}>
+          <h1 className="page-title page-title-token mb-6 font-bold" style={{ color: 'var(--text)' }}>
             <span style={{ color: 'var(--brand)' }}>$NOTA</span>
           </h1>
-          <p className="text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+          <p className="page-copy" style={{ color: 'var(--text-muted)' }}>
             The utility token powering verification, governance, and protocol incentives across the Notareum network.
           </p>
         </div>
       </section>
 
       {/* Token Utility */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Token Utility</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>What $NOTA does</h2>
@@ -81,8 +81,8 @@ export default function TokenPage() {
       </section>
 
       {/* Token Distribution */}
-      <section className="py-20 lg:py-28" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section-lg" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Tokenomics</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Distribution</h2>
@@ -109,7 +109,7 @@ export default function TokenPage() {
 
             {/* Allocation summary */}
             <div className="space-y-3">
-              <div className="card rounded-xl p-6">
+              <div className="card rounded-xl p-5 sm:p-6">
                 <h3 className="font-semibold mb-4" style={{ color: 'var(--text)' }}>Allocation Summary</h3>
                 <div className="space-y-2">
                   {distribution.map((d, i) => (
@@ -129,14 +129,14 @@ export default function TokenPage() {
       </section>
 
       {/* Adaptive Economics */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Token Economics</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Minting and burning that adapts</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="card rounded-xl p-8">
+            <div className="card rounded-xl p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold" style={{ background: 'color-mix(in srgb, var(--brand) 15%, transparent)', border: '1px solid color-mix(in srgb, var(--brand) 30%, transparent)', color: 'var(--brand)' }}>+</div>
                 <h3 className="font-semibold text-lg" style={{ color: 'var(--text)' }}>Goal-Oriented Minting</h3>
@@ -145,7 +145,7 @@ export default function TokenPage() {
                 New $NOTA is minted only when protocol milestones are achieved: verification volume thresholds, new chain integrations, validator count targets. This ties supply expansion to real network growth, not arbitrary schedules.
               </p>
             </div>
-            <div className="card rounded-xl p-8">
+            <div className="card rounded-xl p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold" style={{ background: 'color-mix(in srgb, var(--slate) 14%, transparent)', border: '1px solid color-mix(in srgb, var(--slate) 30%, transparent)', color: 'var(--slate)' }}>-</div>
                 <h3 className="font-semibold text-lg" style={{ color: 'var(--text)' }}>Multi-Faceted Burning</h3>
@@ -166,7 +166,7 @@ export default function TokenPage() {
               </ul>
             </div>
           </div>
-          <div className="mt-8 card rounded-xl p-6 text-center">
+          <div className="card mt-8 rounded-xl p-5 text-center sm:p-6">
             <p className="leading-relaxed" style={{ color: 'var(--text-body)' }}>
               The result is a token model where supply responds dynamically to network activity, creating natural deflationary pressure as usage grows.
             </p>
@@ -175,8 +175,8 @@ export default function TokenPage() {
       </section>
 
       {/* Key Metrics */}
-      <section className="py-20" style={{ background: 'var(--bg-alt)', borderTop: '1px solid var(--border)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg-alt)', borderTop: '1px solid var(--border)' }}>
+        <div className="page-shell">
           <div className="text-center mb-12">
             <div className="label mb-3">Key Metrics</div>
             <h2 className="text-3xl font-bold" style={{ color: 'var(--text)' }}>By the numbers</h2>
@@ -193,13 +193,13 @@ export default function TokenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell-narrow text-center">
           <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text)' }}>Learn more about the economics</h2>
           <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Read the full token economics section in our whitepaper.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/whitepaper" className="btn-primary">Read the Whitepaper</Link>
-            <Link href="/about" className="btn-secondary">View Roadmap</Link>
+            <Link href="/whitepaper" className="btn-primary w-full sm:w-auto">Read the Whitepaper</Link>
+            <Link href="/about" className="btn-secondary w-full sm:w-auto">View Roadmap</Link>
           </div>
         </div>
       </section>

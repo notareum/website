@@ -41,17 +41,17 @@ const useCases = [
 
 export default function UseCases() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: 'var(--bg)' }} id="use-cases">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg)' }} id="use-cases">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <span className="label mb-3 block">Use Cases</span>
-        <h2 className="text-3xl sm:text-4xl font-normal tracking-tight mb-12" style={{ color: 'var(--text)' }}>
+        <h2 className="mb-10 text-3xl font-normal tracking-tight sm:mb-12 sm:text-4xl" style={{ color: 'var(--text)' }}>
           Protocol Applications
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {useCases.map((uc) => (
             <div
               key={uc.num}
-              className="rounded-xl p-8 min-h-[240px] flex flex-col relative overflow-hidden group"
+              className="group relative flex min-h-[220px] flex-col overflow-hidden rounded-xl p-6 sm:min-h-[240px] sm:p-8"
               style={{
                 background: uc.accent ? 'var(--brand)' : 'var(--bg-alt)',
                 color: uc.accent ? '#ffffff' : 'var(--text)',
@@ -72,7 +72,7 @@ export default function UseCases() {
               </div>
               {/* Arrow button */}
               <div
-                className="absolute bottom-0 right-0 w-10 h-10 rounded-tl-lg flex items-center justify-center transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
+                className="absolute bottom-0 right-0 flex h-10 w-10 items-center justify-center rounded-tl-lg transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
                 style={{
                   background: uc.accent ? '#ffffff' : 'var(--text)',
                   color: uc.accent ? 'var(--brand)' : 'var(--bg)',

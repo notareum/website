@@ -2,16 +2,16 @@
 
 export default function NotaFormat() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }} id="protocol">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }} id="protocol">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left - Description + steps */}
           <div>
             <span className="label mb-3 block">The .nota Format</span>
             <h2 className="text-3xl sm:text-4xl font-normal tracking-tight mb-6" style={{ color: 'var(--text)' }}>
               Cryptographically Secured Portability
             </h2>
-            <p className="mb-8 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+            <p className="mb-8 text-sm leading-relaxed sm:text-base" style={{ color: 'var(--text-muted)' }}>
               The <code className="font-mono text-sm" style={{ color: 'var(--brand)' }}>.nota</code> format is a
               lightweight, verifiable container for blockchain state and metadata. It
               encapsulates the payload, structural schema, and the cryptographic proof
@@ -19,8 +19,8 @@ export default function NotaFormat() {
             </p>
 
             {/* Step list */}
-            <div className="relative pl-8">
-              <div className="absolute left-[7px] top-0 bottom-0 w-px" style={{ background: 'var(--border)' }} />
+            <div className="relative pl-7 sm:pl-8">
+              <div className="absolute bottom-0 left-[6px] top-0 w-px sm:left-[7px]" style={{ background: 'var(--border)' }} />
               {[
                 {
                   num: '1',
@@ -39,7 +39,7 @@ export default function NotaFormat() {
                 },
               ].map((step, i) => (
                 <div key={i} className={`relative ${i < 2 ? 'pb-10' : ''}`}>
-                  <div className="absolute -left-8 top-[6px] w-[15px] h-[15px] rounded-full" style={{ background: 'var(--bg-alt)', border: '2px solid var(--brand)' }} />
+                  <div className="absolute -left-7 top-[6px] h-[15px] w-[15px] rounded-full sm:-left-8" style={{ background: 'var(--bg-alt)', border: '2px solid var(--brand)' }} />
                   <h4 className="font-normal mb-2" style={{ color: 'var(--text)' }}>
                     {step.num}. {step.title}
                   </h4>
@@ -55,7 +55,7 @@ export default function NotaFormat() {
               <span>example.nota</span>
               <span>JSON Representation</span>
             </div>
-            <div className="p-6 font-mono text-sm leading-[1.7] overflow-x-auto" style={{ background: 'var(--code-bg)', color: 'var(--text-body)' }}>
+            <div className="overflow-x-auto p-4 font-mono text-[13px] leading-[1.7] sm:p-6 sm:text-sm" style={{ background: 'var(--code-bg)', color: 'var(--text-body)' }}>
               <pre className="m-0" style={{ background: 'transparent', border: 'none', padding: 0 }}>
                 <code>{`{
   `}<span style={{ color: 'var(--brand)' }}>&quot;header&quot;</span>{`: {

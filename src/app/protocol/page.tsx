@@ -140,15 +140,15 @@ export default function ProtocolPage() {
   return (
     <div style={{ background: 'var(--bg)' }}>
       {/* Hero - V5 blue hero */}
-      <section className="hero-blue py-24 lg:py-32 text-center">
+      <section className="hero-blue page-hero">
         <div className="hero-shape-1" />
         <div className="hero-shape-2" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="page-hero-shell relative">
           <div className="label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Notareum Protocol</div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="page-title mb-6 font-bold text-white">
             The <span style={{ color: 'var(--brand-pale)' }}>.nota</span> File Format
           </h1>
-          <p className="text-xl text-white/80 leading-relaxed">
+          <p className="page-copy text-white/80">
             A universal, cryptographically verifiable container for blockchain resource sharing. Chain-agnostic. Human-readable. Under 2KB.
           </p>
         </div>
@@ -158,8 +158,8 @@ export default function ProtocolPage() {
       <ProtocolArchitecture />
 
       {/* Design Principles */}
-      <section className="py-20" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Design Philosophy</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Built on five principles</h2>
@@ -177,8 +177,8 @@ export default function ProtocolPage() {
       </section>
 
       {/* File Structure */}
-      <section id="file-format" className="py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="file-format" className="page-section-lg" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell-narrow">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="label mb-3">File Format</div>
@@ -205,8 +205,8 @@ export default function ProtocolPage() {
       </section>
 
       {/* Resource Types */}
-      <section className="py-20" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Resource Types</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>One format, many resource types</h2>
@@ -237,8 +237,8 @@ export default function ProtocolPage() {
       </section>
 
       {/* Verification Engine */}
-      <section id="verification" className="py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="verification" className="page-section-lg" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Verification Engine</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Decentralized verification you can trust</h2>
@@ -256,7 +256,7 @@ export default function ProtocolPage() {
             <div className="space-y-4">
               {verificationLevels.map((v, i) => (
                 <div key={i} className="card rounded-xl p-5" style={{ borderLeft: `3px solid ${v.color}` }}>
-                  <div className="flex items-center gap-3 mb-1">
+                  <div className="mb-1 flex flex-wrap items-center gap-3">
                     {v.badge}
                     <span className="font-semibold" style={{ color: 'var(--text)' }}>{v.level}</span>
                     <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `color-mix(in srgb, ${v.color} 12%, transparent)`, color: v.color }}>{v.entityType}</span>
@@ -296,7 +296,7 @@ export default function ProtocolPage() {
                         <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{v.example.label}</div>
                       </div>
                     </div>
-                    <div className="mt-4 flex items-center justify-between py-2.5 px-3 rounded-lg text-xs" style={{ background: `color-mix(in srgb, ${v.color} 8%, var(--bg-alt))`, border: `1px solid color-mix(in srgb, ${v.color} 20%, transparent)` }}>
+                    <div className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-xs" style={{ background: `color-mix(in srgb, ${v.color} 8%, var(--bg-alt))`, border: `1px solid color-mix(in srgb, ${v.color} 20%, transparent)` }}>
                       <span style={{ color: 'var(--text-muted)' }}>{v.example.meta}</span>
                       <span className="font-medium flex items-center gap-1" style={{ color: v.color }}>
                         {v.badge}

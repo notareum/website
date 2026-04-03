@@ -108,26 +108,26 @@ export default function AboutPage() {
   return (
     <div style={{ background: 'var(--bg)' }}>
       {/* Hero */}
-      <section className="py-24 lg:py-32 text-center" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-hero" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-hero-shell">
           <div className="label mb-4">Our Story</div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--text)' }}>
+          <h1 className="page-title mb-6 font-bold" style={{ color: 'var(--text)' }}>
             About <span style={{ color: 'var(--brand)' }}>Notareum</span>
           </h1>
-          <p className="text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          <p className="page-copy" style={{ color: 'var(--text-muted)' }}>
             Building the trust infrastructure that Web3 needs for Mainstream Adoption.
           </p>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell-narrow">
           <div className="text-center mb-10">
             <div className="label mb-3">Mission</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Why we exist</h2>
           </div>
-          <div className="card rounded-2xl p-8 lg:p-12 space-y-5 leading-relaxed text-base lg:text-lg" style={{ color: 'var(--text-body)' }}>
+          <div className="card space-y-5 rounded-2xl p-6 text-base leading-relaxed sm:p-8 lg:p-12 lg:text-lg" style={{ color: 'var(--text-body)' }}>
             <p>
               Blockchain technology promised trustless transactions, but the human layer remains dangerously fragile. Users still copy-paste addresses from unverified sources, interact with contracts, and send irreversible transactions based on nothing more than a hex strings.
             </p>
@@ -142,15 +142,15 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 lg:py-28" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section-lg" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Core Values</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>What we stand for</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
-              <div key={i} className="card rounded-xl p-8">
+              <div key={i} className="card rounded-xl p-6 sm:p-8">
                 <div className="mb-4" style={{ color: 'var(--brand)' }}>{v.icon}</div>
                 <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text)' }}>{v.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{v.body}</p>
@@ -161,8 +161,8 @@ export default function AboutPage() {
       </section>
 
       {/* Roadmap */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell-narrow">
           <div className="text-center mb-14">
             <div className="label mb-3">Roadmap</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Where we are going</h2>
@@ -205,15 +205,15 @@ export default function AboutPage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 lg:py-28" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="page-section-lg" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell-narrow">
           <div className="text-center mb-14">
             <div className="label mb-3">Contact</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Get in touch</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {contacts.map((c, i) => (
-              <div key={i} className="card rounded-xl p-6 text-center">
+              <div key={i} className="card rounded-xl p-5 text-center sm:p-6">
                 <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--text-muted)' }}>{c.label}</div>
                 <a
                   href={`mailto:${c.email}`}

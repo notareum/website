@@ -61,21 +61,21 @@ export default function EcosystemPage() {
   return (
     <div style={{ background: 'var(--bg)' }}>
       {/* Hero */}
-      <section className="py-24 lg:py-32 text-center" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-hero" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-hero-shell">
           <div className="label mb-4">Ecosystem</div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--text)' }}>
+          <h1 className="page-title mb-6 font-bold" style={{ color: 'var(--text)' }}>
             The <span style={{ color: 'var(--brand)' }}>Notareum</span> Ecosystem
           </h1>
-          <p className="text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          <p className="page-copy" style={{ color: 'var(--text-muted)' }}>
             A growing network of chains, wallets, exchanges, and applications building on verified resource sharing.
           </p>
         </div>
       </section>
 
       {/* Ecosystem Stats */}
-      <section className="py-16" style={{ borderBottom: '1px solid var(--border)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ borderBottom: '1px solid var(--border)' }}>
+        <div className="page-shell">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {ecosystemStats.map((s, i) => (
               <div key={i} className="text-center">
@@ -88,8 +88,8 @@ export default function EcosystemPage() {
       </section>
 
       {/* Chain Support */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Multi-Chain</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Chain-agnostic by design</h2>
@@ -130,20 +130,20 @@ export default function EcosystemPage() {
       </section>
 
       {/* Integration Categories */}
-      <section className="py-20 lg:py-28" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section-lg" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Integrations</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Built for every platform</h2>
           </div>
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">
             {/* Tab nav */}
             <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible lg:w-48 shrink-0">
               {integrationCategories.map((cat, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveCategory(i)}
-                  className="px-4 py-3 rounded-lg text-sm font-medium text-left whitespace-nowrap transition-colors"
+                  className="whitespace-nowrap rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors"
                   style={{
                     background: activeCategory === i ? 'var(--brand)' : 'var(--card-bg)',
                     color: activeCategory === i ? '#fff' : 'var(--text-muted)',
@@ -155,7 +155,7 @@ export default function EcosystemPage() {
               ))}
             </div>
             {/* Content */}
-            <div className="flex-1 card rounded-xl p-8">
+            <div className="card flex-1 rounded-xl p-6 sm:p-8">
               <h3 className="font-semibold text-xl mb-4" style={{ color: 'var(--text)' }}>
                 {integrationCategories[activeCategory].label}
               </h3>
@@ -168,15 +168,15 @@ export default function EcosystemPage() {
       </section>
 
       {/* Use Case Showcase */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell">
           <div className="text-center mb-14">
             <div className="label mb-3">Real-World Use Cases</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Notareum in action</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {useCaseShowcase.map((u, i) => (
-              <div key={i} className="card rounded-xl p-8">
+              <div key={i} className="card rounded-xl p-6 sm:p-8">
                 <div className="mb-4" style={{ color: 'var(--brand)' }}>{u.icon}</div>
                 <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text)' }}>{u.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{u.body}</p>

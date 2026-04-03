@@ -35,17 +35,17 @@ const challenges = [
 
 export default function Challenges() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: 'var(--bg)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <span className="label mb-3 block">The Challenge</span>
-        <h2 className="text-3xl sm:text-4xl font-normal tracking-tight mb-12" style={{ color: 'var(--text)' }}>
+        <h2 className="mb-10 text-3xl font-normal tracking-tight sm:mb-12 sm:text-4xl" style={{ color: 'var(--text)' }}>
           Fragmented Trust Across Ecosystems
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {challenges.map((c, i) => (
             <div
               key={i}
-              className="card group p-8"
+              className="card group p-6 sm:p-8"
             >
               <div className="w-12 h-12 rounded flex items-center justify-center mb-6" style={{ border: '1px solid var(--accent)', background: 'color-mix(in srgb, var(--accent) 10%, transparent)', color: 'var(--accent)' }}>
                 {c.icon}

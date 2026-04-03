@@ -58,23 +58,23 @@ export default function WhitepaperPage() {
   return (
     <div style={{ background: 'var(--bg)' }}>
       {/* Hero */}
-      <section className="py-24 lg:py-32 text-center" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-hero" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-hero-shell">
           <div className="label mb-4">Research Paper</div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--text)' }}>
+          <h1 className="page-title mb-6 font-bold" style={{ color: 'var(--text)' }}>
             <span style={{ color: 'var(--brand)' }}>Whitepaper</span>
           </h1>
-          <p className="text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+          <p className="page-copy" style={{ color: 'var(--text-muted)' }}>
             The Notareum Protocol: A Universal Transfer Interface for Verified Blockchain Resource Sharing
           </p>
         </div>
       </section>
 
       {/* Download */}
-      <section className="py-16" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card rounded-2xl p-8 lg:p-12" style={{ borderColor: 'color-mix(in srgb, var(--brand) 30%, transparent)' }}>
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell-narrow">
+          <div className="card rounded-2xl p-6 sm:p-8 lg:p-12" style={{ borderColor: 'color-mix(in srgb, var(--brand) 30%, transparent)' }}>
+            <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-8">
               {/* Document icon */}
               <div
                 className="w-24 h-28 rounded-lg flex flex-col items-center justify-center shrink-0"
@@ -102,7 +102,7 @@ export default function WhitepaperPage() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href="/whitepaper/notareum-whitepaper-v1.0.pdf"
-                    className="btn-primary"
+                    className="btn-primary w-full sm:w-auto"
                   >
                     &#8595; Download PDF
                   </a>
@@ -110,7 +110,7 @@ export default function WhitepaperPage() {
                     href="https://github.com/notareum/whitepaper"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary"
+                    className="btn-secondary w-full sm:w-auto"
                   >
                     View on GitHub
                   </a>
@@ -122,8 +122,8 @@ export default function WhitepaperPage() {
       </section>
 
       {/* Key Sections */}
-      <section className="py-20 lg:py-28" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section-lg" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell-narrow">
           <div className="text-center mb-14">
             <div className="label mb-3">Paper Structure</div>
             <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Key sections summary</h2>
@@ -132,7 +132,7 @@ export default function WhitepaperPage() {
             {sections.map((s, i) => (
               <div key={i} className="card rounded-xl overflow-hidden">
                 <button
-                  className="w-full flex items-center justify-between p-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 p-5 text-left"
                   onClick={() => setExpanded(expanded === i ? null : i)}
                 >
                   <div className="flex items-center gap-4">
@@ -153,8 +153,8 @@ export default function WhitepaperPage() {
       </section>
 
       {/* Key Figures */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell">
           <div className="text-center mb-12">
             <div className="label mb-3">Technical Specifications</div>
             <h2 className="text-3xl font-bold" style={{ color: 'var(--text)' }}>Key figures</h2>
@@ -171,8 +171,8 @@ export default function WhitepaperPage() {
       </section>
 
       {/* Citation */}
-      <section className="py-20 lg:py-28" style={{ background: 'var(--bg-alt)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="page-section-lg" style={{ background: 'var(--bg-alt)' }}>
+        <div className="page-shell-narrow">
           <div className="text-center mb-10">
             <div className="label mb-3">How to Cite</div>
             <h2 className="text-3xl font-bold" style={{ color: 'var(--text)' }}>Citation</h2>
@@ -184,13 +184,13 @@ export default function WhitepaperPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="page-section" style={{ background: 'var(--bg)' }}>
+        <div className="page-shell-narrow text-center">
           <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text)' }}>Ready to build on the protocol?</h2>
           <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Explore the developer documentation and start integrating the .nota format.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/developers" className="btn-primary">Start Building</Link>
-            <Link href="/protocol" className="btn-secondary">Read Protocol Spec</Link>
+            <Link href="/developers" className="btn-primary w-full sm:w-auto">Start Building</Link>
+            <Link href="/protocol" className="btn-secondary w-full sm:w-auto">Read Protocol Spec</Link>
           </div>
         </div>
       </section>

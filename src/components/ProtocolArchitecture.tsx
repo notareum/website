@@ -2,9 +2,9 @@
 
 export default function ProtocolArchitecture() {
   return (
-    <section className="py-24 lg:py-32" style={{ backgroundColor: 'var(--bg)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-16 sm:py-20 lg:py-28" style={{ backgroundColor: 'var(--bg)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-medium tracking-tight" style={{ color: 'var(--text)' }}>
             Protocol Architecture
           </h2>
@@ -14,7 +14,7 @@ export default function ProtocolArchitecture() {
         </div>
 
         {/* V5 Topology Diagram */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 relative">
+        <div className="relative flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-0">
           {/* Node 1 - Left */}
           <div className="lg:w-[220px] text-center lg:text-right">
             <div
@@ -29,6 +29,8 @@ export default function ProtocolArchitecture() {
             </p>
           </div>
 
+          <div className="h-12 border-l-2 border-dashed lg:hidden" style={{ borderColor: 'var(--border)' }} />
+
           {/* Dashed line left */}
           <div className="hidden lg:block w-[100px] border-t-2 border-dashed mx-4" style={{ borderColor: 'var(--border)' }} />
 
@@ -42,6 +44,8 @@ export default function ProtocolArchitecture() {
               Nodes reach consensus on signature validity before state transition.
             </p>
           </div>
+
+          <div className="h-12 border-l-2 border-dashed lg:hidden" style={{ borderColor: 'var(--border)' }} />
 
           {/* Dashed line right */}
           <div className="hidden lg:block w-[100px] border-t-2 border-dashed mx-4" style={{ borderColor: 'var(--border)' }} />

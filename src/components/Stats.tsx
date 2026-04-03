@@ -14,14 +14,12 @@ export default function Stats() {
   return (
     <section className="border-y" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, i) => (
+        <div className="grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4" style={{ background: 'var(--border)' }}>
+          {stats.map((stat) => (
             <div
               key={stat.label}
-              className={`py-10 px-6 lg:py-12 lg:px-8 text-center ${
-                i < stats.length - 1 ? 'border-r' : ''
-              }`}
-              style={{ borderColor: 'var(--border)' }}
+              className="px-5 py-8 text-center sm:px-6 sm:py-10 lg:px-8 lg:py-12"
+              style={{ background: 'var(--bg)' }}
             >
               <div className="text-3xl lg:text-4xl font-medium font-mono leading-none mb-2 tracking-tight" style={{ color: 'var(--brand)' }}>
                 {stat.value}

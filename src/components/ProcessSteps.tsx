@@ -39,13 +39,11 @@ export default function ProcessSteps() {
     <section className="relative z-10">
       <div className="flex flex-col lg:flex-row">
         {/* 3 brand step blocks */}
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-3" style={{ background: 'var(--brand)' }}>
-          {steps.map((step, i) => (
+        <div className="flex-1 grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-3 lg:divide-x" style={{ background: 'var(--brand)' }}>
+          {steps.map((step) => (
             <div
               key={step.num}
-              className={`p-10 lg:p-12 flex flex-col text-white ${
-                i < steps.length - 1 ? 'border-r border-white/10' : ''
-              }`}
+              className="flex flex-col p-8 text-white sm:p-10 lg:p-12"
             >
               <div className="mb-6">{step.icon}</div>
               <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">

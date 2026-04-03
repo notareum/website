@@ -9,9 +9,9 @@ const distribution = [
 
 export default function TokenSection() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }} id="token">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }} id="token">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left - Info */}
           <div>
             <span className="label mb-3 block">$NOTA Token</span>
@@ -53,7 +53,7 @@ export default function TokenSection() {
           </div>
 
           {/* Right - Distribution chart */}
-          <div className="card p-8">
+          <div className="card p-6 sm:p-8">
             <h4 className="font-mono text-sm mb-6" style={{ color: 'var(--text)' }}>
               Token Distribution (Total Supply: 1B)
             </h4>
@@ -68,7 +68,7 @@ export default function TokenSection() {
               ))}
             </div>
             {/* Legend */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {distribution.map((d) => (
                 <div key={d.label} className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-body)' }}>
                   <div className="w-3 h-3 rounded-sm flex-shrink-0" style={{ background: d.color }} />

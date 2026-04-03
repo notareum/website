@@ -13,8 +13,8 @@ const chains = [
 
 export default function Ecosystem() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }} id="ecosystem">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }} id="ecosystem">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="label mb-3 block">Ecosystem</span>
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight" style={{ color: 'var(--text)' }}>
@@ -23,11 +23,11 @@ export default function Ecosystem() {
         </div>
 
         {/* Chain grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+        <div className="mb-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
           {chains.map((chain) => (
             <div
               key={chain.name}
-              className="card p-5 text-center cursor-pointer transition-colors"
+              className="card cursor-pointer p-4 text-center transition-colors sm:p-5"
             >
               <div className="font-mono text-sm font-medium mb-1" style={{ color: 'var(--text)' }}>{chain.name}</div>
               <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{chain.desc}</div>
@@ -36,15 +36,12 @@ export default function Ecosystem() {
         </div>
 
         {/* Category band */}
-        <div className="grid grid-cols-3 sm:grid-cols-6" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-          {['DeFi', 'Identity', 'Oracles', 'Gaming', 'DAOs', 'Enterprise'].map((label, i) => (
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl sm:grid-cols-3 lg:grid-cols-6" style={{ background: 'var(--border)' }}>
+          {['DeFi', 'Identity', 'Oracles', 'Gaming', 'DAOs', 'Enterprise'].map((label) => (
             <div
               key={label}
-              className="py-8 px-4 flex items-center justify-center font-semibold text-sm tracking-tight cursor-pointer transition-colors"
-              style={{
-                color: 'var(--text-muted)',
-                borderRight: i < 5 ? '1px solid var(--border)' : 'none',
-              }}
+              className="flex items-center justify-center px-4 py-5 text-sm font-semibold tracking-tight transition-colors"
+              style={{ background: 'var(--bg-alt)', color: 'var(--text-muted)' }}
             >
               {label}
             </div>

@@ -19,21 +19,22 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
+  useEffect(() => setOpen(false), [pathname]);
 
   const isDark = resolvedTheme === 'dark';
 
   return (
-    <nav className="sticky top-0 z-50 border-b" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 border-b backdrop-blur-sm" style={{ borderColor: 'var(--border)', backgroundColor: 'color-mix(in srgb, var(--bg) 92%, transparent)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between gap-3 sm:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-sm font-medium" style={{ color: isDark ? '#ffffff' : 'var(--brand)', letterSpacing: '-0.01em' }}>
-            <Image src="/logo.png" alt="Notareum" width={48} height={48} className="flex-shrink-0" />
-            Notareum
+          <Link href="/" className="flex min-w-0 items-center gap-2 text-sm font-medium" style={{ color: isDark ? '#ffffff' : 'var(--brand)', letterSpacing: '-0.01em' }}>
+            <Image src="/logo.png" alt="Notareum" width={48} height={48} className="h-10 w-10 flex-shrink-0 sm:h-12 sm:w-12" />
+            <span className="truncate">Notareum</span>
           </Link>
 
           {/* Desktop: Segmented pill nav (V7 style) */}
@@ -90,7 +91,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="md:hidden p-2 transition-colors"
+            className="rounded-full p-2 transition-colors md:hidden"
             style={{ color: 'var(--text-muted)' }}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
@@ -103,31 +104,34 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden py-4 border-t" style={{ borderColor: 'var(--border)' }}>
-            <div className="flex flex-col gap-1">
+          <div className="border-t py-4 md:hidden" style={{ borderColor: 'var(--border)' }}>
+            <div className="card rounded-2xl p-2.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2.5 text-sm rounded transition-colors"
-                  style={{ color: pathname === link.href ? 'var(--brand)' : 'var(--text-muted)' }}
+                  className="block rounded-xl px-3 py-3 text-sm transition-colors"
+                  style={{
+                    background: pathname === link.href ? 'color-mix(in srgb, var(--brand) 10%, transparent)' : 'transparent',
+                    color: pathname === link.href ? 'var(--brand)' : 'var(--text-muted)',
+                  }}
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-3 px-3 flex items-center gap-3">
+              <div className="mt-2 flex flex-col gap-3 px-1 pb-1">
                 {mounted && (
                   <button
                     type="button"
                     onClick={() => setTheme(isDark ? 'light' : 'dark')}
-                    className="text-xs px-3 py-2 rounded-full"
+                    className="rounded-full px-4 py-2.5 text-xs"
                     style={{ color: 'var(--text-muted)', border: '1px solid var(--border)' }}
                   >
                     {isDark ? '☀ Light' : '☾ Dark'}
                   </button>
                 )}
-                <button type="button" className="btn-primary text-sm flex-1 justify-center">
+                <button type="button" className="btn-primary w-full text-sm justify-center">
                   Launch App
                 </button>
               </div>
