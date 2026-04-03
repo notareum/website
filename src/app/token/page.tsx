@@ -1,12 +1,18 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '$NOTA Token - Governance and Utility',
+  description: 'Learn about the $NOTA token: governance, staking, validator incentives, and the tokenomics powering the Notareum protocol.',
+};
 
 const distribution = [
-  { label: 'Ecosystem & Validators', pct: '35%', vesting: '4-year linear unlock', color: '#3A6FE5' },
-  { label: 'Protocol Development', pct: '20%', vesting: '3-year cliff + linear', color: '#6B93EB' },
-  { label: 'Community & Grants', pct: '15%', vesting: 'Ongoing distribution', color: '#93B8FF' },
-  { label: 'Team & Advisors', pct: '15%', vesting: '1-year cliff, 3-year vest', color: '#7c3aed' },
-  { label: 'Liquidity & Partnerships', pct: '10%', vesting: 'At launch + 2-year vest', color: '#db2777' },
-  { label: 'Reserve', pct: '5%', vesting: 'DAO-controlled', color: '#d97706' },
+  { label: 'Ecosystem & Validators', pct: '35%', vesting: '4-year linear unlock', color: 'var(--brand-strong)' },
+  { label: 'Protocol Development', pct: '20%', vesting: '3-year cliff + linear', color: 'var(--brand)' },
+  { label: 'Community & Grants', pct: '15%', vesting: 'Ongoing distribution', color: 'var(--brand-soft)' },
+  { label: 'Team & Advisors', pct: '15%', vesting: '1-year cliff, 3-year vest', color: 'var(--brand-pale)' },
+  { label: 'Liquidity & Partnerships', pct: '10%', vesting: 'At launch + 2-year vest', color: 'var(--slate)' },
+  { label: 'Reserve', pct: '5%', vesting: 'DAO-controlled', color: 'var(--slate-soft)' },
 ];
 
 const utility = [
@@ -141,7 +147,7 @@ export default function TokenPage() {
             </div>
             <div className="card rounded-xl p-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold" style={{ background: 'rgba(219,39,119,0.1)', border: '1px solid rgba(219,39,119,0.3)', color: '#db2777' }}>-</div>
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold" style={{ background: 'color-mix(in srgb, var(--slate) 14%, transparent)', border: '1px solid color-mix(in srgb, var(--slate) 30%, transparent)', color: 'var(--slate)' }}>-</div>
                 <h3 className="font-semibold text-lg" style={{ color: 'var(--text)' }}>Multi-Faceted Burning</h3>
               </div>
               <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>$NOTA is burned through four mechanisms:</p>
@@ -153,7 +159,7 @@ export default function TokenPage() {
                   'Voluntary token burns by ecosystem projects',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
-                    <span style={{ color: '#db2777' }} className="mt-0.5">&#9679;</span>
+                    <span style={{ color: 'var(--slate)' }} className="mt-0.5">&#9679;</span>
                     {item}
                   </li>
                 ))}

@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import ProtocolArchitecture from '@/components/ProtocolArchitecture';
+
+export const metadata: Metadata = {
+  title: 'Notareum Protocol - How Verified Resource Sharing Works',
+  description: 'Learn how the Notareum protocol enables verified, trustless sharing of blockchain resources using cryptographic proofs and the .nota file format.',
+};
 
 const principles = [
   {
@@ -41,13 +47,13 @@ const resourceTypes = [
 const verificationLevels = [
   {
     level: 'Basic',
-    color: '#10b981',
-    badgeBg: '#10b981',
+    color: 'var(--slate)',
+    badgeBg: 'var(--slate)',
     entityType: 'Addresses & Resources',
     desc: 'Automated on-chain existence check. Confirms the address or contract exists on the specified chain. No human review.',
     badge: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="11" fill="#10b981" />
+        <circle cx="12" cy="12" r="11" fill="var(--slate)" />
         <path d="M8 12l3 3 5-5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
@@ -59,13 +65,13 @@ const verificationLevels = [
   },
   {
     level: 'Enhanced',
-    color: '#3A6FE5',
-    badgeBg: '#3A6FE5',
+    color: 'var(--brand)',
+    badgeBg: 'var(--brand)',
     entityType: 'Projects & Protocols',
     desc: 'Community validator review. Multiple validators independently verify the resource against external data (project websites, social profiles, contract source code).',
     badge: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 13.14l-5-4.87 6.91-1.01L12 1z" fill="#3A6FE5" />
+        <path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 13.14l-5-4.87 6.91-1.01L12 1z" fill="var(--brand)" />
         <path d="M9.5 12l2 2 3.5-3.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
@@ -77,14 +83,14 @@ const verificationLevels = [
   },
   {
     level: 'Institutional',
-    color: '#a855f7',
-    badgeBg: '#a855f7',
+    color: 'var(--brand-strong)',
+    badgeBg: 'var(--brand-strong)',
     entityType: 'Regulated Entities & Organizations',
     desc: 'KYC-linked verification. The resource owner provides identity documentation reviewed by accredited validators. Suitable for regulated entities.',
     badge: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M12 1l2.39 4.84 5.34.78-3.87 3.77.91 5.34L12 13.27l-4.77 2.46.91-5.34-3.87-3.77 5.34-.78L12 1z" fill="#a855f7" />
-        <rect x="6" y="16" width="12" height="7" rx="1" fill="#a855f7" />
+        <path d="M12 1l2.39 4.84 5.34.78-3.87 3.77.91 5.34L12 13.27l-4.77 2.46.91-5.34-3.87-3.77 5.34-.78L12 1z" fill="var(--brand-strong)" />
+        <rect x="6" y="16" width="12" height="7" rx="1" fill="var(--brand-strong)" />
         <path d="M9 19.5h6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M9.5 12l2 2 3-3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -140,7 +146,7 @@ export default function ProtocolPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Notareum Protocol</div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            The <span style={{ color: '#93B8FF' }}>.nota</span> File Format
+            The <span style={{ color: 'var(--brand-pale)' }}>.nota</span> File Format
           </h1>
           <p className="text-xl text-white/80 leading-relaxed">
             A universal, cryptographically verifiable container for blockchain resource sharing. Chain-agnostic. Human-readable. Under 2KB.

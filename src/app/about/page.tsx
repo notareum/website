@@ -1,4 +1,10 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About - Notareum Labs',
+  description: 'Meet the team behind Notareum. Learn about our mission to build the trust layer for Web3 through open, verifiable protocols.',
+};
 
 const values = [
   {
@@ -78,21 +84,21 @@ const contacts = [
 ];
 
 const statusStyles: Record<string, { bg: string; color: string; border: string }> = {
-  completed: { bg: 'rgba(5,150,105,0.15)', color: '#34d399', border: '#065f46' },
+  completed: { bg: 'color-mix(in srgb, var(--brand-soft) 18%, transparent)', color: 'var(--brand-soft)', border: 'var(--brand-soft)' },
   active: { bg: 'color-mix(in srgb, var(--brand) 20%, transparent)', color: 'var(--brand)', border: 'var(--brand)' },
   upcoming: { bg: 'transparent', color: 'var(--text-muted)', border: 'var(--border)' },
   future: { bg: 'transparent', color: 'var(--text-muted)', border: 'var(--border)' },
 };
 
 const dotColors: Record<string, string> = {
-  completed: '#34d399',
+  completed: 'var(--brand-soft)',
   active: 'var(--brand)',
   upcoming: 'var(--border)',
   future: 'var(--border)',
 };
 
 const itemDotColors: Record<string, string> = {
-  completed: '#34d399',
+  completed: 'var(--brand-soft)',
   active: 'var(--brand)',
   upcoming: 'var(--text-muted)',
   future: 'var(--text-muted)',
