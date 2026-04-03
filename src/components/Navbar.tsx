@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/protocol', label: 'Protocol' },
   { href: '/developers', label: 'Developers' },
   { href: '/ecosystem', label: 'Ecosystem' },
