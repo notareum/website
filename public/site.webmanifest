@@ -1,0 +1,13 @@
+{
+  "name": "Notareum",
+  "short_name": "Notareum",
+  "description": "The Trust Layer for Web3. Open protocol for verified blockchain resource sharing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#3A6FE5",
+  "icons": [
+    { "src": "/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
