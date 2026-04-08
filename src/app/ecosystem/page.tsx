@@ -266,55 +266,20 @@ export default function EcosystemPage() {
         </div>
       </section>
 
-      {/* Expanded Use Cases Grid */}
+      {/* Real-World Use Cases */}
       <section className="page-section" style={{ background: 'var(--bg)' }}>
         <div className="page-shell">
           <div className="text-center mb-14">
-            <div className="label mb-3">Use Cases</div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: 'var(--text)' }}>One Format, Everywhere</h2>
+            <div className="label mb-3">Real-World Use Cases</div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: 'var(--text)' }}>Notareum in action</h2>
             <p className="max-w-2xl mx-auto text-base" style={{ color: 'var(--text-muted)' }}>
               From everyday transactions to enterprise operations, the .nota format brings verification
               and human readability to every interaction with a blockchain.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {expandedUseCases.map((uc) => (
-              <div
-                key={uc.num}
-                className="group relative flex min-h-[200px] flex-col overflow-hidden rounded-xl p-5 sm:min-h-[220px] sm:p-6"
-                style={{
-                  background: uc.accent ? 'var(--brand)' : 'var(--bg-alt)',
-                  color: uc.accent ? '#ffffff' : 'var(--text)',
-                }}
-              >
-                <div className="text-xs mb-3" style={{ opacity: 0.5 }}>{uc.num}</div>
-                <div className="text-[0.875rem] leading-relaxed flex-1">{uc.desc}</div>
-                <div className="text-[0.6rem] uppercase tracking-widest mt-4" style={{ opacity: 0.4 }}>{uc.title}</div>
-                <div
-                  className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-tl-lg transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
-                  style={{
-                    background: uc.accent ? '#ffffff' : 'var(--text)',
-                    color: uc.accent ? 'var(--brand)' : 'var(--bg)',
-                  }}
-                >
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Use Case Showcase */}
-      <section className="page-section" style={{ background: 'var(--bg)' }}>
-        <div className="page-shell">
-          <div className="text-center mb-14">
-            <div className="label mb-3">Real-World Use Cases</div>
-            <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text)' }}>Notareum in action</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Detailed showcase cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             {useCaseShowcase.map((u, i) => (
               <div key={i} className="card rounded-xl p-6 sm:p-8">
                 <div className="mb-4" style={{ color: 'var(--brand)' }}>{u.icon}</div>
@@ -322,6 +287,38 @@ export default function EcosystemPage() {
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{u.body}</p>
               </div>
             ))}
+          </div>
+
+          {/* Expanded use cases grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {expandedUseCases.map((uc, i) => {
+              const accent = i % 2 === 0;
+              return (
+                <div
+                  key={uc.num}
+                  className="group relative flex min-h-[200px] flex-col overflow-hidden rounded-xl p-5 sm:min-h-[220px] sm:p-6"
+                  style={{
+                    background: accent ? 'var(--brand)' : 'var(--bg-alt)',
+                    color: accent ? '#ffffff' : 'var(--text)',
+                  }}
+                >
+                  <div className="text-xs mb-3" style={{ opacity: 0.5 }}>{uc.num}</div>
+                  <div className="text-[0.875rem] leading-relaxed flex-1">{uc.desc}</div>
+                  <div className="text-[0.6rem] uppercase tracking-widest mt-4" style={{ opacity: 0.4 }}>{uc.title}</div>
+                  <div
+                    className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-tl-lg transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
+                    style={{
+                      background: accent ? '#ffffff' : 'var(--text)',
+                      color: accent ? 'var(--brand)' : 'var(--bg)',
+                    }}
+                  >
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

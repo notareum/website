@@ -11,7 +11,7 @@ const stats = [
 function ClipboardMalwareCard() {
   return (
     <div
-      className="rounded-2xl p-6 sm:p-8 w-full max-w-md mx-auto"
+      className="rounded-2xl p-6 sm:p-8 w-full"
       style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)' }}
     >
       {/* Header */}
@@ -76,12 +76,11 @@ function ClipboardMalwareCard() {
 function ComparisonCards() {
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      {/* Bank Transfer card (light) */}
+      {/* Bank Transfer card */}
       <div
         className="rounded-2xl p-6 sm:p-8"
         style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)' }}
       >
-        {/* Header */}
         <div className="flex items-center gap-3 mb-5">
           <div
             className="w-10 h-10 rounded-full flex items-center justify-center"
@@ -105,7 +104,6 @@ function ComparisonCards() {
           When you make a bank transfer, the system shows you the account holder&apos;s name before you confirm.
         </div>
 
-        {/* Verified recipient */}
         <div
           className="rounded-lg p-4 flex items-center gap-4"
           style={{ borderLeft: '3px solid #22c55e', background: 'color-mix(in srgb, #22c55e 6%, transparent)' }}
@@ -134,7 +132,6 @@ function ComparisonCards() {
         className="rounded-2xl p-6 sm:p-8"
         style={{ background: '#0f1420', border: '1px solid rgba(255,255,255,0.08)' }}
       >
-        {/* Header */}
         <div className="flex items-center gap-3 mb-5">
           <div
             className="w-10 h-10 rounded-full flex items-center justify-center"
@@ -157,11 +154,7 @@ function ComparisonCards() {
           There is no &quot;Are you sure this is John?&quot; confirmation. No name resolution. No second chance.
         </div>
 
-        {/* Unknown recipient */}
-        <div
-          className="rounded-lg p-4 mb-3"
-          style={{ background: 'rgba(255,255,255,0.04)' }}
-        >
+        <div className="rounded-lg p-4 mb-3" style={{ background: 'rgba(255,255,255,0.04)' }}>
           <div className="flex items-center justify-between gap-3">
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-wider mb-1" style={{ color: '#6b7280' }}>
@@ -183,7 +176,6 @@ function ComparisonCards() {
           </div>
         </div>
 
-        {/* Danger warning */}
         <div
           className="flex items-start gap-2.5 rounded-lg px-4 py-3"
           style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.15)' }}
@@ -205,26 +197,27 @@ export default function ProblemStatement() {
   return (
     <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="label mb-3 block">The Problem</span>
-        <h2
-          className="mb-6 text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl"
-          style={{ color: 'var(--text)' }}
-        >
-          Billions Lost to a Copy-Paste Problem
-        </h2>
-        <p
-          className="mb-12 max-w-3xl text-base leading-relaxed sm:mb-14 sm:text-lg"
-          style={{ color: 'var(--text-body)' }}
-        >
-          Every day, people share wallet addresses, transaction hashes, and contract addresses
-          by copying and pasting raw hex strings. A 42-character jumble like{' '}
-          <code className="font-mono text-sm" style={{ color: 'var(--brand)' }}>0x7a2b...9f3e</code>{' '}
-          is supposed to represent a person, a business, a treasury. But it looks like gibberish to most people.
-          And even experts get it wrong.
-        </p>
-
-        {/* Clipboard malware illustration */}
-        <div className="mb-14 sm:mb-16">
+        {/* Side-by-side: problem text + clipboard illustration */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 mb-14 sm:mb-16">
+          <div>
+            <span className="label mb-3 block">The Problem</span>
+            <h2
+              className="mb-6 text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl"
+              style={{ color: 'var(--text)' }}
+            >
+              Billions Lost to a Copy-Paste Problem
+            </h2>
+            <p
+              className="text-base leading-relaxed sm:text-lg"
+              style={{ color: 'var(--text-body)' }}
+            >
+              Every day, people share wallet addresses, transaction hashes, and contract addresses
+              by copying and pasting raw hex strings. A 42-character jumble like{' '}
+              <code className="font-mono text-sm" style={{ color: 'var(--brand)' }}>0x7a2b...9f3e</code>{' '}
+              is supposed to represent a person, a business, a treasury. But it looks like gibberish
+              to most people. And even experts get it wrong.
+            </p>
+          </div>
           <ClipboardMalwareCard />
         </div>
 
@@ -250,10 +243,7 @@ export default function ProblemStatement() {
         {/* Stat cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="card p-6 sm:p-7"
-            >
+            <div key={stat.label} className="card p-6 sm:p-7">
               <div
                 className="mb-2 text-2xl font-medium font-mono tracking-tight sm:text-3xl"
                 style={{ color: 'var(--brand)' }}
