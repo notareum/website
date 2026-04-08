@@ -205,7 +205,7 @@ export default function ProblemStatement() {
               className="mb-6 text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl"
               style={{ color: 'var(--text)' }}
             >
-              Billions Lost to a Copy-Paste Problem
+              Billions Lost to a Copy-Paste Problem (A Human + AI Agent Error)
             </h2>
             <p
               className="text-base leading-relaxed sm:text-lg"
@@ -215,8 +215,23 @@ export default function ProblemStatement() {
               by copying and pasting raw hex strings. A 42-character jumble like{' '}
               <code className="font-mono text-sm" style={{ color: 'var(--brand)' }}>0x7a2b...9f3e</code>{' '}
               is supposed to represent a person, a business, a treasury. But it looks like gibberish
-              to most people. And even experts get it wrong.
+              to most people, especially non-savvy users. And even experts get it wrong.
             </p>
+            <br />
+          <p className="text-base leading-relaxed sm:text-lg" style={{ color: 'var(--text-body)' }}>
+            When you make a bank transfer, the system shows you the account holder&apos;s name before you confirm.
+            That one small feedback loop prevents millions of errors every day. In crypto, you get nothing. You paste
+            an address, hit send, and hope. There is no &quot;Are you sure this is John?&quot; confirmation.
+            No name resolution. No second chance. If even one character is wrong, or if clipboard malware silently
+            swapped the address while you were not looking, your money is gone. Permanently. Irreversibly.
+          </p>
+          <br />
+          <p className="text-base leading-relaxed sm:text-lg" style={{ color: 'var(--text-body)' }}>
+            This is not a fringe problem. Address poisoning attacks, clipboard hijackers, fake contract scams,
+            and plain human error have cost the industry billions. They have cost individuals their life savings,
+            cost businesses months of revenue, and cost the entire ecosystem its credibility with mainstream users.
+            The technology that promises to bank the unbanked cannot even confirm who you are sending money to.
+          </p>
           </div>
           <ClipboardMalwareCard />
         </div>
