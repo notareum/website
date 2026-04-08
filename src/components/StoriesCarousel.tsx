@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 const stories = [
   {
@@ -48,96 +48,161 @@ const stories = [
 ];
 
 export default function StoriesCarousel() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
 
+  const DURATION = 6000; // 6s per story
+  const TICK = 50;
+
+  const goNext = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % stories.length);
+    setProgress(0);
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + stories.length) % stories.length);
+    setProgress(0);
+  }, []);
+
+  // Auto-advance timer
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % stories.length);
-    }, 5000);
+      setProgress((prev) => {
+        if (prev >= 100) {
+          goNext();
+          return 0;
+        }
+        return prev + (TICK / DURATION) * 100;
+      });
+    }, TICK);
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, goNext]);
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const card = el.children[activeIndex] as HTMLElement | undefined;
-    if (card) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  // Tap zones: left 40% = prev, right 40% = next, middle 20% = pause toggle
+  const handleTap = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    if (x < 0.4) goPrev();
+    else if (x > 0.6) goNext();
+  };
+
+  const getCardStyle = (i: number) => {
+    const diff = i - activeIndex;
+    const wrappedDiff =
+      diff > stories.length / 2 ? diff - stories.length :
+      diff < -stories.length / 2 ? diff + stories.length : diff;
+
+    if (wrappedDiff === 0) {
+      return {
+        transform: 'translateX(0) scale(1)',
+        opacity: 1,
+        zIndex: 10,
+        flex: '0 0 min(440px, 80vw)',
+      };
     }
-  }, [activeIndex]);
+
+    const direction = wrappedDiff > 0 ? 1 : -1;
+    const absD = Math.abs(wrappedDiff);
+
+    if (absD > 2) {
+      return {
+        transform: `translateX(${direction * 120}%) scale(0.7)`,
+        opacity: 0,
+        zIndex: 0,
+        flex: '0 0 0px',
+      };
+    }
+
+    return {
+      transform: `translateX(${direction * 10}%) scale(${absD === 1 ? 0.85 : 0.75})`,
+      opacity: absD === 1 ? 0.6 : 0.3,
+      zIndex: 5 - absD,
+      flex: `0 0 min(${absD === 1 ? 200 : 140}px, ${absD === 1 ? 30 : 20}vw)`,
+    };
+  };
 
   return (
     <section
       className="py-16 sm:py-20 lg:py-28"
       style={{ background: 'var(--bg-alt)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12">
         <span className="label mb-3 block">Real Stories</span>
         <h2
-          className="mb-10 text-3xl font-normal tracking-tight sm:mb-12 sm:text-4xl"
+          className="text-3xl font-normal tracking-tight sm:text-4xl"
           style={{ color: 'var(--text)' }}
         >
           Behind Every Lost Transaction Is a Person
         </h2>
       </div>
 
-      {/* Scrollable story cards */}
+      {/* Carousel container */}
       <div
-        ref={scrollRef}
-        className="flex gap-4 overflow-x-auto px-4 pb-4 sm:gap-5 sm:px-6 lg:px-8"
-        style={{
-          scrollSnapType: 'x mandatory',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}
+        className="relative mx-auto max-w-5xl cursor-pointer select-none overflow-hidden px-4"
+        onClick={handleTap}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
       >
-        {stories.map((story, i) => (
-          <div
-            key={i}
-            className="flex-shrink-0 rounded-xl p-6 sm:p-8"
-            style={{
-              width: 'min(360px, 85vw)',
-              scrollSnapAlign: 'center',
-              background: activeIndex === i ? 'var(--brand)' : 'var(--card-bg)',
-              border: activeIndex === i ? 'none' : '1px solid var(--card-border)',
-              color: activeIndex === i ? '#ffffff' : 'var(--text-body)',
-              transition: 'background 0.4s, color 0.4s, border 0.4s',
-            }}
-          >
-            <div className="mb-4 text-2xl">{story.emoji}</div>
-            <p
-              className="mb-6 text-sm leading-relaxed sm:text-[0.9375rem]"
-              style={{
-                color: activeIndex === i ? 'rgba(255,255,255,0.9)' : 'var(--text-body)',
-              }}
-            >
-              &ldquo;{story.quote}&rdquo;
-            </p>
-            <div
-              className="text-xs font-medium uppercase tracking-wider"
-              style={{
-                color: activeIndex === i ? 'rgba(255,255,255,0.6)' : 'var(--text-muted)',
-              }}
-            >
-              {story.source}
-            </div>
-          </div>
-        ))}
+        <div className="flex items-center justify-center gap-3 sm:gap-4" style={{ minHeight: '320px' }}>
+          {stories.map((story, i) => {
+            const style = getCardStyle(i);
+            const isActive = i === activeIndex;
+            return (
+              <div
+                key={i}
+                className="rounded-xl p-6 sm:p-8 transition-all duration-500 ease-out"
+                style={{
+                  ...style,
+                  background: isActive ? 'var(--brand)' : 'var(--card-bg)',
+                  border: isActive ? 'none' : '1px solid var(--card-border)',
+                  color: isActive ? '#ffffff' : 'var(--text-body)',
+                  pointerEvents: isActive ? 'auto' : 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                {/* Progress bar on active card */}
+                {isActive && (
+                  <div
+                    className="absolute top-0 left-0 h-[3px]"
+                    style={{
+                      width: `${progress}%`,
+                      background: 'rgba(255,255,255,0.5)',
+                      transition: `width ${TICK}ms linear`,
+                    }}
+                  />
+                )}
+                <div className="mb-4 text-2xl">{story.emoji}</div>
+                <p
+                  className={`mb-6 leading-relaxed ${isActive ? 'text-sm sm:text-[0.9375rem]' : 'text-xs line-clamp-3'}`}
+                  style={{
+                    color: isActive ? 'rgba(255,255,255,0.9)' : 'var(--text-body)',
+                  }}
+                >
+                  &ldquo;{story.quote}&rdquo;
+                </p>
+                <div
+                  className="text-xs font-medium uppercase tracking-wider"
+                  style={{
+                    color: isActive ? 'rgba(255,255,255,0.6)' : 'var(--text-muted)',
+                  }}
+                >
+                  {story.source}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Progress dots */}
-      <div className="mt-6 flex justify-center gap-2">
+      <div className="mt-8 flex justify-center gap-2">
         {stories.map((_, i) => (
           <button
             key={i}
-            onClick={() => setActiveIndex(i)}
+            onClick={() => { setActiveIndex(i); setProgress(0); }}
             className="h-1.5 rounded-full transition-all duration-300"
             style={{
               width: activeIndex === i ? '24px' : '8px',
