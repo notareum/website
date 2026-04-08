@@ -3,39 +3,99 @@
 const useCases = [
   {
     num: '01',
-    title: 'Developer Tooling',
-    desc: 'Secure distribution of verifiable smart contract ABIs across decentralized networks without reliance on centralized registries.',
+    title: 'Sharing Wallet Addresses',
+    desc: 'Send your address as a verifiable .nota file instead of a raw hex string. The recipient sees your name, chain, and verification status before sending.',
     accent: true,
   },
   {
     num: '02',
-    title: 'Enterprise Legal',
-    desc: 'Immutable document custody and automated settlement for holding company transactions via .nota-wrapped cryptographic files.',
+    title: 'Payment Requests',
+    desc: 'Create a payment request with amount, currency, and recipient verification baked in. Like a QR code, but portable, verifiable, and tamper-proof.',
     accent: false,
   },
   {
     num: '03',
-    title: 'Supply Chain',
-    desc: 'Cross-chain verifiable supply chain manifests protecting the integrity of petrochemical and raw material logistics.',
+    title: 'Transaction Receipts',
+    desc: 'Get a cryptographic receipt for every transaction. Shareable, verifiable, and permanently yours. Proof of payment that actually means something.',
     accent: true,
   },
   {
     num: '04',
-    title: 'M&A Auditing',
-    desc: 'Comprehensive legal due diligence with corporate documentation bound into a single verifiable cryptographic portfolio.',
+    title: 'Cross-Border Remittance',
+    desc: 'Send payment instructions to family abroad with built-in verification. No more "did I use the right address?" No more hoping the money arrives.',
     accent: false,
   },
   {
     num: '05',
-    title: 'DID Providers',
-    desc: 'Issue verifiable credentials wrapped in .nota format for instant identity verification on any supported network.',
+    title: 'Merchant Checkout',
+    desc: 'Accept crypto with a verified .nota payment page. Customers see they are paying the right merchant, not a phishing clone with a similar URL.',
     accent: true,
   },
   {
     num: '06',
-    title: 'Asset Portability',
-    desc: 'Export game state and digital assets securely, porting them to new environments via the standardized .nota file format.',
+    title: 'Salary and Payroll',
+    desc: 'Pay employees in crypto with verifiable .nota payslips showing employer identity, amount, chain, and timestamp. Auditable and portable.',
     accent: false,
+  },
+  {
+    num: '07',
+    title: 'NFT Certificates',
+    desc: 'Share NFT ownership and provenance as .nota files. Provable, portable, and immune to marketplace shutdowns or metadata link rot.',
+    accent: false,
+  },
+  {
+    num: '08',
+    title: 'IPFS and Arweave Sharing',
+    desc: 'Share decentralized storage links as verified .nota files. Cryptographic proof that the CID or transaction ID points to exactly what it claims.',
+    accent: true,
+  },
+  {
+    num: '09',
+    title: 'Multi-sig Coordination',
+    desc: 'Share transaction proposals with all signers as .nota files. Every signer verifies the same payload, the same destination, the same terms.',
+    accent: true,
+  },
+  {
+    num: '10',
+    title: 'Tax Documentation',
+    desc: 'Export transaction history as .nota files for tax reporting. Cryptographically provable cost basis that auditors can independently verify.',
+    accent: false,
+  },
+  {
+    num: '11',
+    title: 'Developer Tooling',
+    desc: 'Distribute verifiable smart contract ABIs, deployment addresses, and configuration across teams without relying on centralized registries.',
+    accent: false,
+  },
+  {
+    num: '12',
+    title: 'Enterprise Legal',
+    desc: 'Immutable document custody and automated settlement for holding company transactions via .nota-wrapped cryptographic files.',
+    accent: true,
+  },
+  {
+    num: '13',
+    title: 'Supply Chain',
+    desc: 'Cross-chain verifiable supply chain manifests protecting the integrity of logistics, certifications, and provenance data.',
+    accent: true,
+  },
+  {
+    num: '14',
+    title: 'DID and Identity',
+    desc: 'Issue verifiable credentials wrapped in .nota format for instant identity verification on any supported network or application.',
+    accent: false,
+  },
+  {
+    num: '15',
+    title: 'DAO Governance',
+    desc: 'Package proposals, vote receipts, and treasury reports as .nota files. Transparent governance artifacts that any member can verify.',
+    accent: false,
+  },
+  {
+    num: '16',
+    title: 'Insurance Claims',
+    desc: 'Submit on-chain insurance claims with .nota-wrapped evidence: transaction records, timestamps, and cryptographic proof of loss.',
+    accent: true,
   },
 ];
 
@@ -44,41 +104,45 @@ export default function UseCases() {
     <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg)' }} id="use-cases">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <span className="label mb-3 block">Use Cases</span>
-        <h2 className="mb-10 text-3xl font-normal tracking-tight sm:mb-12 sm:text-4xl" style={{ color: 'var(--text)' }}>
-          Protocol Applications
+        <h2 className="mb-4 text-3xl font-normal tracking-tight sm:text-4xl" style={{ color: 'var(--text)' }}>
+          One Format, Everywhere
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <p className="mb-10 max-w-2xl text-base sm:mb-12 sm:text-lg" style={{ color: 'var(--text-muted)' }}>
+          From everyday transactions to enterprise operations, the .nota format brings verification
+          and human readability to every interaction with a blockchain.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {useCases.map((uc) => (
             <div
               key={uc.num}
-              className="group relative flex min-h-[220px] flex-col overflow-hidden rounded-xl p-6 sm:min-h-[240px] sm:p-8"
+              className="group relative flex min-h-[200px] flex-col overflow-hidden rounded-xl p-5 sm:min-h-[220px] sm:p-6"
               style={{
                 background: uc.accent ? 'var(--brand)' : 'var(--bg-alt)',
                 color: uc.accent ? '#ffffff' : 'var(--text)',
               }}
             >
               <div
-                className="text-xs mb-4"
+                className="text-xs mb-3"
                 style={{ opacity: 0.5 }}
               >
                 {uc.num}
               </div>
-              <div className="text-[0.95rem] leading-relaxed flex-1">{uc.desc}</div>
+              <div className="text-[0.875rem] leading-relaxed flex-1">{uc.desc}</div>
               <div
-                className="text-[0.65rem] uppercase tracking-widest mt-6"
+                className="text-[0.6rem] uppercase tracking-widest mt-4"
                 style={{ opacity: 0.4 }}
               >
                 {uc.title}
               </div>
               {/* Arrow button */}
               <div
-                className="absolute bottom-0 right-0 flex h-10 w-10 items-center justify-center rounded-tl-lg transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
+                className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-tl-lg transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
                 style={{
                   background: uc.accent ? '#ffffff' : 'var(--text)',
                   color: uc.accent ? 'var(--brand)' : 'var(--bg)',
                 }}
               >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
