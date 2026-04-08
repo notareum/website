@@ -95,7 +95,7 @@ export default function UseCases() {
           From everyday transactions to enterprise operations, the .nota format brings verification
           and human readability to every interaction with a blockchain.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {useCases.map((uc, i) => {
             const accent = i % 2 === 0;
             return (
