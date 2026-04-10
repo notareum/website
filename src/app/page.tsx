@@ -1,16 +1,16 @@
-import Hero from '@/components/Hero';
-import ProblemStatement from '@/components/ProblemStatement';
-import StoriesCarousel from '@/components/StoriesCarousel';
-import Challenges from '@/components/Challenges';
-import SolutionStatement from '@/components/SolutionStatement';
-import ProcessSteps from '@/components/ProcessSteps';
-import NotaFormat from '@/components/NotaFormat';
-import UseCases from '@/components/UseCases';
-import ProtocolArchitecture from '@/components/ProtocolArchitecture';
-import Ecosystem from '@/components/Ecosystem';
-import DeveloperSDK from '@/components/DeveloperSDK';
-import TokenSection from '@/components/TokenSection';
 import CTABanner from '@/components/CTABanner';
+import Challenges from '@/components/Challenges';
+import DeveloperSDK from '@/components/DeveloperSDK';
+import Ecosystem from '@/components/Ecosystem';
+import Hero from '@/components/Hero';
+import IntroducingSolution from '@/components/IntroducingSolution';
+import NotaFormat from '@/components/NotaFormat';
+import ProblemStatement from '@/components/ProblemStatement';
+import ProcessSteps from '@/components/ProcessSteps';
+import SolutionStatement from '@/components/SolutionStatement';
+import StoriesCarousel from '@/components/StoriesCarousel';
+import TokenSection from '@/components/TokenSection';
+import UseCases from '@/components/UseCases';
 
 export default function HomePage() {
   return (
@@ -19,11 +19,11 @@ export default function HomePage() {
       <ProblemStatement />
       <StoriesCarousel />
       <Challenges />
+      <IntroducingSolution />
       <SolutionStatement />
       <ProcessSteps />
       <NotaFormat />
       <UseCases />
-      <ProtocolArchitecture />
       <Ecosystem />
       <DeveloperSDK />
       <TokenSection />
