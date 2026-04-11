@@ -16,10 +16,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <IntroducingSolution />
       <ProblemStatement />
       <StoriesCarousel />
       <Challenges />
-      <IntroducingSolution />
       <SolutionStatement />
       <ProcessSteps />
       <NotaFormat />
