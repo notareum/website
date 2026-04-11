@@ -4,7 +4,7 @@
 
 **The Trust Layer for Web3**
 
-Official marketing website for the Notareum protocol — an open standard for sharing blockchain resources safely with cryptographic verification across every chain.
+Official marketing website for the Notareum protocol: an open standard for sharing blockchain resources safely with cryptographic verification across every chain.
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -34,26 +34,26 @@ This repository contains the source code for [notareum.com](https://notareum.com
 
 ### Key Pages
 
-| Route | Description |
-| --- | --- |
-| `/` | Landing page with hero, architecture, challenges, process, SDK, ecosystem, use cases, token, and CTA sections |
-| `/protocol` | Protocol architecture deep-dive |
-| `/developers` | Developer SDK documentation & resources |
-| `/ecosystem` | Ecosystem partners & integrations |
-| `/token` | NOTA token utility & distribution |
-| `/whitepaper` | Whitepaper viewer |
-| `/about` | About Notareum Labs |
+| Route           | Description                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------- |
+| `/`           | Landing page with hero, architecture, challenges, process, SDK, ecosystem, use cases, token, and CTA sections |
+| `/protocol`   | Protocol architecture deep-dive                                                                               |
+| `/developers` | Developer SDK documentation & resources                                                                       |
+| `/ecosystem`  | Ecosystem partners & integrations                                                                             |
+| `/token`      | NOTA token utility & distribution                                                                             |
+| `/whitepaper` | Whitepaper viewer                                                                                             |
+| `/about`      | About Notareum Labs                                                                                           |
 
 ## Tech Stack
 
-| Technology | Purpose |
-| --- | --- |
-| **Next.js 14** | React framework (App Router, static export) |
-| **TypeScript 5** | Type-safe development |
-| **Tailwind CSS 3** | Utility-first styling |
-| **next-themes** | Dark / light mode support |
-| **Inter** | Primary typeface via `next/font` |
-| **ESLint** | Code quality & consistency |
+| Technology               | Purpose                                     |
+| ------------------------ | ------------------------------------------- |
+| **Next.js 14**     | React framework (App Router, static export) |
+| **TypeScript 5**   | Type-safe development                       |
+| **Tailwind CSS 3** | Utility-first styling                       |
+| **next-themes**    | Dark / light mode support                   |
+| **Inter**          | Primary typeface via `next/font`          |
+| **ESLint**         | Code quality & consistency                  |
 
 ## Project Structure
 
@@ -102,12 +102,12 @@ Open [http://localhost:3000](http://localhost:3000) to view the site. Pages auto
 
 ## Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the development server |
+| Command           | Description                                     |
+| ----------------- | ----------------------------------------------- |
+| `npm run dev`   | Start the development server                    |
 | `npm run build` | Generate a production static export to `out/` |
-| `npm run start` | Serve the production build locally |
-| `npm run lint` | Run ESLint across the codebase |
+| `npm run start` | Serve the production build locally              |
+| `npm run lint`  | Run ESLint across the codebase                  |
 
 ## Deployment
 
@@ -115,21 +115,21 @@ The site is built as a **static export** (`output: 'export'` in `next.config.js`
 
 ### Automated — GitHub Actions → cPanel FTP
 
-A workflow at `.github/workflows/deploy-cpanel.yml` automatically builds and deploys the site whenever code is pushed to the `prod/deploy` branch.
+A workflow at `.github/workflows/deploy-prod.yml` automatically builds and deploys the site whenever code is pushed to the `prod/deploy` branch.
 
 **Required GitHub Secrets:**
 
-| Secret | Description |
-| --- | --- |
-| `CPANEL_FTP_SERVER` | FTP hostname for your cPanel account |
-| `CPANEL_FTP_USERNAME` | FTP username |
-| `CPANEL_FTP_PASSWORD` | FTP password |
+| Secret           | Description                            |
+| ---------------- | -------------------------------------- |
+| `FTP_SERVER`   | FTP hostname for your deployer account |
+| `FTP_USERNAME` | FTP username                           |
+| `FTP_PASSWORD` | FTP password                           |
 
 **Optional GitHub Variable:**
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `CPANEL_FTP_SERVER_DIR` | Remote destination directory | `/public_html/` |
+| Variable           | Description                  | Default           |
+| ------------------ | ---------------------------- | ----------------- |
+| `FTP_SERVER_DIR` | Remote destination directory | `/public_html/` |
 
 ### Manual
 

@@ -250,7 +250,7 @@ export default function StoriesCarousel() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-end">
-          <div className="max-w-3xl">
+          <div className="min-w-0 max-w-3xl">
             <span className="label mb-3 block">Real Stories</span>
             <h2
               className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl"
@@ -268,7 +268,7 @@ export default function StoriesCarousel() {
           </div>
 
           <div
-            className="rounded-[24px] p-5 sm:p-6"
+            className="min-w-0 rounded-[24px] p-5 sm:p-6"
             style={{
               background: 'color-mix(in srgb, var(--card-bg) 82%, var(--brand-fog))',
               border: '1px solid color-mix(in srgb, var(--brand) 18%, var(--card-border))',
@@ -316,9 +316,9 @@ export default function StoriesCarousel() {
           onFocusCapture={() => setIsPaused(true)}
           onBlurCapture={handleBlur}
         >
-          <div className="order-2 lg:order-1">
+          <div className="order-2 min-w-0 lg:order-1">
             <div
-              className="flex gap-3 overflow-x-auto pb-2 lg:grid lg:max-h-[44rem] lg:overflow-visible lg:pb-0"
+              className="flex w-full gap-3 overflow-x-auto pb-2 lg:grid lg:max-h-[44rem] lg:overflow-visible lg:pb-0"
               role="tablist"
               aria-label="Incident stories"
             >
@@ -400,7 +400,7 @@ export default function StoriesCarousel() {
             id={`story-panel-${activeStory.id}`}
             role="tabpanel"
             aria-labelledby={`story-tab-${activeStory.id}`}
-            className="order-1 overflow-hidden rounded-[28px] p-6 sm:p-8 lg:order-2 lg:p-10"
+            className="order-1 min-w-0 overflow-hidden rounded-[28px] p-6 sm:p-8 lg:order-2 lg:p-10"
             style={{
               background:
                 'linear-gradient(145deg, color-mix(in srgb, var(--card-bg) 82%, var(--brand-fog)) 0%, color-mix(in srgb, var(--card-bg) 96%, var(--bg-alt)) 52%, color-mix(in srgb, var(--brand-fog) 32%, var(--card-bg)) 100%)',

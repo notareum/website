@@ -1,4 +1,4 @@
-name: Deploy To cPanel
+name: Deploy To Production
 
 on:
   push:
@@ -10,14 +10,14 @@ permissions:
   contents: read
 
 concurrency:
-  group: deploy-cpanel-${{ github.ref }}
+  group: deploy-production-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      FTP_SERVER_DIR: ${{ vars.CPANEL_FTP_SERVER_DIR != '' && vars.CPANEL_FTP_SERVER_DIR || '/public_html/' }}
+      FTP_SERVER_DIR: ${{ vars.FTP_SERVER_DIR != '' && vars.FTP_SERVER_DIR || '/public_html/' }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -37,9 +37,9 @@ jobs:
       - name: Upload exported site over FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.CPANEL_FTP_SERVER }}
-          username: ${{ secrets.CPANEL_FTP_USERNAME }}
-          password: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           local-dir: ./out/
           server-dir: ${{ env.FTP_SERVER_DIR }}
