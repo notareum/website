@@ -16,6 +16,14 @@ const navLinks = [
   { href: '/whitepaper', label: 'Whitepaper' },
 ];
 
+function normalizePath(path: string) {
+  if (path === '/') {
+    return '/';
+  }
+
+  return path.replace(/\/+$/, '');
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -26,6 +34,17 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   const isDark = resolvedTheme === 'dark';
+  const currentPath = normalizePath(pathname || '/');
+
+  const isActiveLink = (href: string) => {
+    const normalizedHref = normalizePath(href);
+
+    if (normalizedHref === '/') {
+      return currentPath === '/';
+    }
+
+    return currentPath === normalizedHref || currentPath.startsWith(`${normalizedHref}/`);
+  };
 
   return (
     <nav className="sticky top-0 z-50 border-b backdrop-blur-sm" style={{ borderColor: 'var(--border)', backgroundColor: 'color-mix(in srgb, var(--bg) 92%, transparent)' }}>
@@ -42,7 +61,7 @@ export default function Navbar() {
             <div className="segmented-nav">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <button data-active={pathname === link.href ? 'true' : 'false'}>
+                  <button data-active={isActiveLink(link.href) ? 'true' : 'false'}>
                     {link.label}
                   </button>
                 </Link>
@@ -112,8 +131,8 @@ export default function Navbar() {
                   href={link.href}
                   className="block rounded-xl px-3 py-3 text-sm transition-colors"
                   style={{
-                    background: pathname === link.href ? 'color-mix(in srgb, var(--brand) 10%, transparent)' : 'transparent',
-                    color: pathname === link.href ? 'var(--brand)' : 'var(--text-muted)',
+                    background: isActiveLink(link.href) ? 'color-mix(in srgb, var(--brand) 10%, transparent)' : 'transparent',
+                    color: isActiveLink(link.href) ? 'var(--brand)' : 'var(--text-muted)',
                   }}
                   onClick={() => setOpen(false)}
                 >
