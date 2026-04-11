@@ -197,27 +197,34 @@ export default function ProblemStatement() {
   return (
     <section className="py-16 sm:py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Side-by-side: problem text + clipboard illustration */}
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 mb-14 sm:mb-16">
-          <div>
-            <span className="label mb-3 block">The Problem</span>
-            <h2
-              className="mb-6 text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl"
-              style={{ color: 'var(--text)' }}
-            >
-              Billions Lost to a Copy-Paste Problem (A Human + AI Agent Error)
-            </h2>
-            <p
-              className="text-base leading-relaxed sm:text-lg"
-              style={{ color: 'var(--text-body)' }}
-            >
-              Every day, people share wallet addresses, transaction hashes, and contract addresses
-              by copying and pasting raw hex strings. A 42-character jumble like{' '}
-              <code className="font-mono text-sm" style={{ color: 'var(--brand)' }}>0x7a2b...9f3e</code>{' '}
-              is supposed to represent a person, a business, a treasury. But it looks like gibberish
-              to most people, especially non-savvy users. And even experts get it wrong.
-            </p>
-            <br />
+        {/* Full-width heading */}
+        <div className="mb-10 sm:mb-12">
+          <span className="label mb-3 block">The Problem</span>
+          <h2
+            className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ color: 'var(--text)' }}
+          >
+            Billions Lost to a Copy-Paste Problem (A Human + AI Agent Error)
+          </h2>
+        </div>
+
+        {/* First paragraph + clipboard illustration side by side */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 mb-10 sm:mb-12">
+          <p
+            className="text-base leading-relaxed sm:text-lg"
+            style={{ color: 'var(--text-body)' }}
+          >
+            Every day, people share wallet addresses, transaction hashes, and contract addresses
+            by copying and pasting raw hex strings. A 42-character jumble like{' '}
+            <code className="font-mono text-sm" style={{ color: 'var(--brand)' }}>0x7a2b...9f3e</code>{' '}
+            is supposed to represent a person, a business, a treasury. But it looks like gibberish
+            to most people, especially non-savvy users. And even experts get it wrong.
+          </p>
+          <ClipboardMalwareCard />
+        </div>
+
+        {/* Second paragraph — full width */}
+        <div className="mb-10 sm:mb-12">
           <p className="text-base leading-relaxed sm:text-lg" style={{ color: 'var(--text-body)' }}>
             When you make a bank transfer, the system shows you the account holder&apos;s name before you confirm.
             That one small feedback loop prevents millions of errors every day. In crypto, you get nothing. You paste
@@ -225,34 +232,21 @@ export default function ProblemStatement() {
             No name resolution. No second chance. If even one character is wrong, or if clipboard malware silently
             swapped the address while you were not looking, your money is gone. Permanently. Irreversibly.
           </p>
-          <br />
+        </div>
+
+        {/* Missing feedback illustration — right after second paragraph */}
+        <div className="mb-10 sm:mb-12">
+          <ComparisonCards />
+        </div>
+
+        {/* Third paragraph — full width */}
+        <div className="mb-14 sm:mb-16">
           <p className="text-base leading-relaxed sm:text-lg" style={{ color: 'var(--text-body)' }}>
             This is not a fringe problem. Address poisoning attacks, clipboard hijackers, fake contract scams,
             and plain human error have cost the industry billions. They have cost individuals their life savings,
             cost businesses months of revenue, and cost the entire ecosystem its credibility with mainstream users.
             The technology that promises to bank the unbanked cannot even confirm who you are sending money to.
           </p>
-          </div>
-          <ClipboardMalwareCard />
-        </div>
-
-        {/* The Missing Feedback Loop */}
-        <div className="mb-12 text-center max-w-2xl mx-auto sm:mb-14">
-          <h3
-            className="mb-4 text-2xl font-normal tracking-tight sm:text-3xl"
-            style={{ color: 'var(--text)' }}
-          >
-            The Missing Feedback Loop
-          </h3>
-          <p className="text-base leading-relaxed sm:text-lg" style={{ color: 'var(--text-body)' }}>
-            In traditional finance, confirmation prevents millions of errors daily. In crypto, you get
-            nothing. You paste an address, hit send, and hope.
-          </p>
-        </div>
-
-        {/* Bank vs Crypto comparison */}
-        <div className="mb-14 sm:mb-16 max-w-4xl mx-auto">
-          <ComparisonCards />
         </div>
 
         {/* Stat cards */}
