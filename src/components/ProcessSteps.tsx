@@ -58,7 +58,7 @@ export default function ProcessSteps() {
 
         {/* Offset card */}
         <div
-          className="hidden xl:flex w-[380px] flex-col justify-center p-10 border-l border-white/10"
+          className="xl:flex w-[380px] flex-col justify-center p-10 border-l border-white/10"
           style={{
             background: 'var(--bg-alt)',
             backgroundImage: 'linear-gradient(var(--border) 1px, transparent 1px)',
