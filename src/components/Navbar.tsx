@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/developers', label: 'Developers' },
   { href: '/ecosystem', label: 'Ecosystem' },
   { href: '/token', label: '$NOTA' },
+  { href: 'https://docs.notareum.com', label: 'Docs', external: true },
   { href: '/whitepaper', label: 'Whitepaper' },
 ];
 
@@ -59,13 +60,21 @@ export default function Navbar() {
           {/* Desktop: Segmented pill nav (V7 style) */}
           <div className="hidden md:block">
             <div className="segmented-nav">
-              {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <button data-active={isActiveLink(link.href) ? 'true' : 'false'}>
-                    {link.label}
-                  </button>
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.external ? (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                    <button data-active={isActiveLink(link.href) ? 'true' : 'false'}>
+                      {link.label}
+                    </button>
+                  </a>
+                ) : (
+                  <Link key={link.href} href={link.href}>
+                    <button data-active={isActiveLink(link.href) ? 'true' : 'false'}>
+                      {link.label}
+                    </button>
+                  </Link>
+                ),
+              )}
             </div>
           </div>
 
@@ -99,12 +108,14 @@ export default function Navbar() {
                 )}
               </button>
             )}
-            <button
-              type="button"
+            <a
+              href="https://app.notareum.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary btn-secondary-fill-hover text-sm justify-center whitespace-nowrap"
             >
               Launch dApp
-            </button>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -125,20 +136,34 @@ export default function Navbar() {
         {open && (
           <div className="border-t py-4 md:hidden" style={{ borderColor: 'var(--border)' }}>
             <div className="card rounded-2xl p-2.5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block rounded-xl px-3 py-3 text-sm transition-colors"
-                  style={{
-                    background: isActiveLink(link.href) ? 'color-mix(in srgb, var(--brand) 10%, transparent)' : 'transparent',
-                    color: isActiveLink(link.href) ? 'var(--brand)' : 'var(--text-muted)',
-                  }}
-                  onClick={() => setOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-xl px-3 py-3 text-sm transition-colors"
+                    style={{ background: 'transparent', color: 'var(--text-muted)' }}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-xl px-3 py-3 text-sm transition-colors"
+                    style={{
+                      background: isActiveLink(link.href) ? 'color-mix(in srgb, var(--brand) 10%, transparent)' : 'transparent',
+                      color: isActiveLink(link.href) ? 'var(--brand)' : 'var(--text-muted)',
+                    }}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
               <div className="mt-2 flex flex-col gap-3 px-1 pb-1">
                 {mounted && (
                   <button
@@ -150,9 +175,15 @@ export default function Navbar() {
                     {isDark ? '☀ Light' : '☾ Dark'}
                   </button>
                 )}
-                <button type="button" className="btn-primary w-full text-sm justify-center">
+                <a
+                  href="https://app.notareum.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full text-sm justify-center"
+                  onClick={() => setOpen(false)}
+                >
                   Launch dApp
-                </button>
+                </a>
               </div>
             </div>
           </div>
