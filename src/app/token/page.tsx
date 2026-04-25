@@ -7,12 +7,12 @@ export const metadata: Metadata = {
 };
 
 const distribution = [
-  { label: 'Ecosystem & Validators', pct: '35%', vesting: '4-year linear unlock', color: 'var(--brand-strong)' },
-  { label: 'Protocol Development', pct: '20%', vesting: '3-year cliff + linear', color: 'var(--brand)' },
-  { label: 'Community & Grants', pct: '15%', vesting: 'Ongoing distribution', color: 'var(--brand-soft)' },
-  { label: 'Team & Advisors', pct: '15%', vesting: '1-year cliff, 3-year vest', color: 'var(--brand-pale)' },
-  { label: 'Liquidity & Partnerships', pct: '10%', vesting: 'At launch + 2-year vest', color: 'var(--slate)' },
-  { label: 'Reserve', pct: '5%', vesting: 'DAO-controlled', color: 'var(--slate-soft)' },
+  { label: 'Community & Users', pct: '35%', amount: '350,000,000 NOTA', vesting: 'Airdrop, usage rewards, retroactive funding', color: 'var(--brand-strong)' },
+  { label: 'Validator Rewards', pct: '20%', amount: '200,000,000 NOTA', vesting: 'Paid out over 10 years for attestation', color: 'var(--brand)' },
+  { label: 'Team', pct: '15%', amount: '150,000,000 NOTA', vesting: '4-year vest, 1-year cliff', color: 'var(--brand-soft)' },
+  { label: 'Ecosystem Grants', pct: '12%', amount: '120,000,000 NOTA', vesting: 'Integrations and retroactive PGF', color: 'var(--brand-pale)' },
+  { label: 'Investors', pct: '10%', amount: '100,000,000 NOTA', vesting: '3-year vest, 6-month cliff', color: 'var(--slate)' },
+  { label: 'Treasury', pct: '8%', amount: '80,000,000 NOTA', vesting: 'Governance-controlled', color: 'var(--slate-soft)' },
 ];
 
 const utility = [
@@ -39,10 +39,10 @@ const utility = [
 ];
 
 const keyMetrics = [
-  { label: 'Total Supply', value: '1,000,000,000 $NOTA' },
-  { label: 'Initial Circulating', value: '~8% at launch' },
-  { label: 'Burn Rate', value: 'Variable (tied to activity)' },
-  { label: 'Staking APR', value: '6 to 18%' },
+  { label: 'Initial Supply', value: '1,000,000,000 NOTA' },
+  { label: 'Standard', value: 'ERC-20 (18 decimals)' },
+  { label: 'Supply Dynamics', value: 'KPI minting + burns' },
+  { label: 'Governance', value: 'veNOTA (up to 4y lock)' },
 ];
 
 export default function TokenPage() {
@@ -102,7 +102,7 @@ export default function TokenPage() {
                       style={{ width: d.pct, background: d.color }}
                     />
                   </div>
-                  <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{d.vesting}</p>
+                  <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{d.amount} · {d.vesting}</p>
                 </div>
               ))}
             </div>
@@ -142,7 +142,7 @@ export default function TokenPage() {
                 <h3 className="font-semibold text-lg" style={{ color: 'var(--text)' }}>Goal-Oriented Minting</h3>
               </div>
               <p className="leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                New $NOTA is minted only when protocol milestones are achieved: verification volume thresholds, new chain integrations, validator count targets. This ties supply expansion to real network growth, not arbitrary schedules.
+                New $NOTA is minted only via governance proposals tied to KPI milestones (verification volume, chain integrations, validator targets) and integration grants for wallets, exchanges, and dApps. There is no privileged minter; every emission requires a vote.
               </p>
             </div>
             <div className="card rounded-xl p-6 sm:p-8">
@@ -153,10 +153,10 @@ export default function TokenPage() {
               <p className="leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>$NOTA is burned through four mechanisms:</p>
               <ul className="space-y-2">
                 {[
-                  'A percentage of verification fees',
-                  'Slashed validator stakes from dishonest behavior',
-                  'Protocol upgrade activation fees',
-                  'Voluntary token burns by ecosystem projects',
+                  'Fee burns: a percentage of every verification fee',
+                  'Slashing burns: portion of slashed validator stakes',
+                  'Failed dispute bonds (frivolous disputes forfeited)',
+                  'Alias registration burns',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
                     <span style={{ color: 'var(--slate)' }} className="mt-0.5">&#9679;</span>
@@ -196,10 +196,10 @@ export default function TokenPage() {
       <section className="page-section" style={{ background: 'var(--bg)' }}>
         <div className="page-shell-narrow text-center">
           <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text)' }}>Learn more about the economics</h2>
-          <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Read the full token economics section in our whitepaper.</p>
+          <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Read the full token economics in the docs or whitepaper.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/whitepaper" className="btn-primary w-full sm:w-auto">Read the Whitepaper</Link>
-            <Link href="/about" className="btn-secondary w-full sm:w-auto">View Roadmap</Link>
+            <a href="https://docs.notareum.com/token/tokenomics" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">View Tokenomics Docs</a>
+            <Link href="/whitepaper" className="btn-secondary w-full sm:w-auto">Read the Whitepaper</Link>
           </div>
         </div>
       </section>

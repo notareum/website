@@ -1,10 +1,12 @@
 'use client';
 
 const distribution = [
-  { label: 'Ecosystem & Grants', pct: 40, color: 'var(--brand-strong)' },
-  { label: 'Core Contributors', pct: 25, color: 'var(--brand)' },
-  { label: 'Treasury', pct: 20, color: 'var(--brand-soft)' },
-  { label: 'Public Distribution', pct: 15, color: 'var(--slate)' },
+  { label: 'Community & Users', pct: 35, color: 'var(--brand-strong)' },
+  { label: 'Validator Rewards', pct: 20, color: 'var(--brand)' },
+  { label: 'Team (vested)', pct: 15, color: 'var(--brand-soft)' },
+  { label: 'Ecosystem Grants', pct: 12, color: 'var(--brand-pale)' },
+  { label: 'Investors (vested)', pct: 10, color: 'var(--slate)' },
+  { label: 'Treasury', pct: 8, color: 'var(--slate-soft)' },
 ];
 
 export default function TokenSection() {
@@ -76,6 +78,9 @@ export default function TokenSection() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-xs" style={{ color: 'var(--text-muted)' }}>
+              See the <a href="https://docs.notareum.com/token/distribution" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand)' }}>full distribution and vesting schedule</a> in the docs.
+            </p>
           </div>
         </div>
       </div>
