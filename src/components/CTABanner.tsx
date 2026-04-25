@@ -14,11 +14,11 @@ export default function CTABanner() {
             Our SDKs provide simple wrappers around complex cryptographic proofs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/developers" className="btn-primary w-full sm:w-auto">
-              Read the Docs
+            <a href="https://app.notareum.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
+              Launch App
             </a>
-            <a href="/ecosystem" className="btn-secondary w-full sm:w-auto">
-              Explore Ecosystem
+            <a href="https://docs.notareum.com" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">
+              Read the Docs
             </a>
           </div>
         </div>

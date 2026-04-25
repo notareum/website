@@ -213,7 +213,14 @@ export default function DevelopersPage() {
             <div className="label mb-4">Get Started</div>
             <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text)' }}>Start building today</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/developers" className="btn-primary w-full sm:w-auto">Read Full Docs</Link>
+              <a
+                href="https://docs.notareum.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full sm:w-auto"
+              >
+                Read Full Docs
+              </a>
               <a
                 href="https://github.com/notareum"
                 target="_blank"
