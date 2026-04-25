@@ -4,17 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const footerLinks = {
-  Product: [
-    { label: 'Launch App', href: 'https://app.notareum.com', target: '_blank' },
-    { label: 'Documentation', href: 'https://docs.notareum.com', target: '_blank' },
-    { label: 'Whitepaper', href: '/whitepaper' },
-    { label: '$NOTA', href: '/token' },
-  ],
   Protocol: [
     { label: 'How It Works', href: '/protocol#how-it-works' },
     { label: '.nota Format', href: '/protocol#file-format' },
     { label: 'Verification', href: '/protocol#verification' },
     { label: 'Security', href: '/protocol#security' },
+    { label: 'Launch dApp', href: 'https://app.notareum.com', target: '_blank' },
+    { label: 'Whitepaper', href: '/whitepaper' },
+    { label: '$NOTA', href: '/token' },
   ],
   Developers: [
     { label: 'Docs', href: 'https://docs.notareum.com', target: '_blank' },
