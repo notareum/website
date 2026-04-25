@@ -79,7 +79,7 @@ const roadmap = [
 const contacts = [
   { label: 'General', email: 'hello@notareum.com' },
   { label: 'Research', email: 'research@notareum.com' },
-  { label: 'Partnerships', email: 'partners@notareum.com' },
+  { label: 'Partnerships', email: 'partnerships@notareum.com' },
   { label: 'Security', email: 'security@notareum.com', note: 'responsible disclosure' },
 ];
 
