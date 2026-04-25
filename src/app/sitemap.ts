@@ -9,5 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://notareum.com/token', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: 'https://notareum.com/whitepaper', lastModified: new Date(), changeFrequency: 'yearly', priority: 0.6 },
     { url: 'https://notareum.com/about', lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
+    { url: 'https://notareum.com/privacy-policy', lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
+    { url: 'https://notareum.com/terms', lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
   ];
 }
