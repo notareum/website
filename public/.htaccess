@@ -24,9 +24,9 @@ DirectoryIndex index.html
 
     # Add trailing slash to directory URLs (matches Next.js trailingSlash: true)
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_URI} !(.+)/$
+    RewriteCond %{REQUEST_URI} !/$
     RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]+$
-    RewriteRule ^(.*)$ /$1/ [R=301,L]
+    RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
 
     # Serve /foo/ as /foo/index.html
     RewriteCond %{REQUEST_FILENAME} -d
