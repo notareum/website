@@ -5,17 +5,17 @@ import Link from 'next/link';
 
 const footerLinks = {
   Protocol: [
-    { label: 'How It Works', href: '/protocol#how-it-works' },
-    { label: '.nota Format', href: '/protocol#file-format' },
-    { label: 'Verification', href: '/protocol#verification' },
-    { label: 'Security', href: '/protocol#security' },
+    { label: 'How It Works', href: '/protocol/#how-it-works' },
+    { label: '.nota Format', href: '/protocol/#file-format' },
+    { label: 'Verification', href: '/protocol/#verification' },
+    { label: 'Security', href: '/protocol/#security' },
     { label: 'Launch dApp', href: 'https://app.notareum.com', target: '_blank' },
-    { label: 'Whitepaper', href: '/whitepaper' },
-    { label: '$NOTA', href: '/token' },
+    { label: 'Whitepaper', href: '/whitepaper/' },
+    { label: '$NOTA', href: '/token/' },
   ],
   Developers: [
     { label: 'Docs', href: 'https://docs.notareum.com', target: '_blank' },
-    { label: 'SDKs', href: '/developers#sdk' },
+    { label: 'SDKs', href: '/developers/#sdk' },
     { label: 'API Reference', href: 'https://docs.notareum.com/reference', target: '_blank' },
     { label: 'GitHub', href: 'https://github.com/notareum', target: '_blank' },
   ],
@@ -23,13 +23,13 @@ const footerLinks = {
     { label: 'Discord', href: 'https://discord.gg/notareum', target: '_blank' },
     { label: 'Twitter / X', href: 'https://twitter.com/notareum', target: '_blank' },
     { label: 'Telegram', href: 'https://t.me/notareum', target: '_blank' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Blog', href: '/blog/' },
   ],
   Company: [
-    { label: 'About', href: '/about' },
-    { label: 'Careers', href: '/about#careers' },
-    { label: 'Brand Kit', href: '/about#brand' },
-    { label: 'Contact', href: '/about#contact' },
+    { label: 'About', href: '/about/' },
+    { label: 'Careers', href: '/about/#careers' },
+    { label: 'Brand Kit', href: '/about/#brand' },
+    { label: 'Contact', href: '/about/#contact' },
   ],
 };
 
@@ -93,10 +93,10 @@ export default function Footer() {
             &copy; 2026 Notareum Labs
           </p>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <Link href="/privacy" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/privacy-policy/" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/terms/" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>
               Terms
             </Link>
           </div>

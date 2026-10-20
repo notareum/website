@@ -70,22 +70,22 @@ const guides = [
   {
     title: 'Wallet Integration Guide',
     desc: 'Add .nota support to custodial or non-custodial wallets',
-    href: '/developers#wallet',
+    href: '/developers/#wallet',
   },
   {
     title: 'Exchange Integration',
     desc: 'Enable verified deposits and withdrawals with .nota files',
-    href: '/developers#exchange',
+    href: '/developers/#exchange',
   },
   {
     title: 'dApp Integration',
     desc: 'Accept and display verified resources in your decentralized application',
-    href: '/developers#dapp',
+    href: '/developers/#dapp',
   },
   {
     title: 'Enterprise API',
     desc: 'High-throughput verification for institutional use cases',
-    href: '/developers#enterprise',
+    href: '/developers/#enterprise',
   },
 ];
 

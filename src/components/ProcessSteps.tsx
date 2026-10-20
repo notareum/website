@@ -76,7 +76,7 @@ export default function ProcessSteps() {
             Bundles payload, schema, and signatures into a single portable artifact.
           </p>
           <a
-            href="/protocol"
+            href="/protocol/"
             className="inline-flex items-center gap-2 font-semibold text-sm hover:gap-3 transition-all"
             style={{ color: 'var(--brand)' }}
           >

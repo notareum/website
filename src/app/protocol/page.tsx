@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import ProtocolArchitecture from '@/components/ProtocolArchitecture';
+import { pageUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Notareum Protocol - How Verified Resource Sharing Works',
   description: 'Learn how the Notareum protocol enables verified, trustless sharing of blockchain resources using cryptographic proofs and the .nota file format.',
+  alternates: { canonical: pageUrl('/protocol') },
 };
 
 const principles = [
@@ -346,8 +348,8 @@ export default function ProtocolPage() {
           <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text)' }}>Ready to integrate the .nota format?</h2>
           <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Check out the developer documentation and SDKs to get started.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/developers" className="btn-primary">View Developer Docs</Link>
-            <Link href="/whitepaper" className="btn-secondary">Read the Whitepaper</Link>
+            <Link href="/developers/" className="btn-primary">View Developer Docs</Link>
+            <Link href="/whitepaper/" className="btn-secondary">Read the Whitepaper</Link>
           </div>
         </div>
       </section>

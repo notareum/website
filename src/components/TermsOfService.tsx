@@ -175,7 +175,7 @@ const sections = [
       <>
         <p>
           If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect. These Terms,
-          together with the <Link href="/privacy-policy" style={{ color: 'var(--brand)' }}>Privacy Policy</Link>, constitute the entire agreement
+          together with the <Link href="/privacy-policy/" style={{ color: 'var(--brand)' }}>Privacy Policy</Link>, constitute the entire agreement
           between you and Notareum regarding the Site.
         </p>
       </>

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { pageUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: '$NOTA Token - Governance and Utility',
   description: 'Learn about the $NOTA token: governance, staking, validator incentives, and the tokenomics powering the Notareum protocol.',
+  alternates: { canonical: pageUrl('/token') },
 };
 
 const distribution = [
@@ -199,7 +201,7 @@ export default function TokenPage() {
           <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Read the full token economics in the docs or whitepaper.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://docs.notareum.com/token/tokenomics" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">View Tokenomics Docs</a>
-            <Link href="/whitepaper" className="btn-secondary w-full sm:w-auto">Read the Whitepaper</Link>
+            <Link href="/whitepaper/" className="btn-secondary w-full sm:w-auto">Read the Whitepaper</Link>
           </div>
         </div>
       </section>
