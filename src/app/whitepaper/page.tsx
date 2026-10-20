@@ -189,8 +189,8 @@ export default function WhitepaperPage() {
           <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text)' }}>Ready to build on the protocol?</h2>
           <p className="mb-8" style={{ color: 'var(--text-muted)' }}>Explore the developer documentation and start integrating the .nota format.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/developers" className="btn-primary w-full sm:w-auto">Start Building</Link>
-            <Link href="/protocol" className="btn-secondary w-full sm:w-auto">Read Protocol Spec</Link>
+            <Link href="/developers/" className="btn-primary w-full sm:w-auto">Start Building</Link>
+            <Link href="/protocol/" className="btn-secondary w-full sm:w-auto">Read Protocol Spec</Link>
           </div>
         </div>
       </section>

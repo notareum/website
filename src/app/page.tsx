@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import CTABanner from '@/components/CTABanner';
 import Challenges from '@/components/Challenges';
 import DeveloperSDK from '@/components/DeveloperSDK';
@@ -11,6 +12,11 @@ import SolutionStatement from '@/components/SolutionStatement';
 import StoriesCarousel from '@/components/StoriesCarousel';
 import TokenSection from '@/components/TokenSection';
 import UseCases from '@/components/UseCases';
+import { pageUrl } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  alternates: { canonical: pageUrl('/') },
+};
 
 export default function HomePage() {
   return (

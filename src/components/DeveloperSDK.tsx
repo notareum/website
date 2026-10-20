@@ -87,7 +87,7 @@ export default function DeveloperSDK() {
                 </li>
               ))}
             </ul>
-            <a href="/developers" className="btn-primary w-full text-sm sm:w-auto">
+            <a href="/developers/" className="btn-primary w-full text-sm sm:w-auto">
               Read Documentation
             </a>
           </div>

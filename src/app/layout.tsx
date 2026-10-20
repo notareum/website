@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   description:
     'Notareum is an open protocol for sharing blockchain resources safely. One file format. Cryptographic verification. Every chain.',
   metadataBase: new URL('https://notareum.com'),
-  alternates: {
-    canonical: '/',
-  },
   keywords: [
     'Notareum',
     'Web3',

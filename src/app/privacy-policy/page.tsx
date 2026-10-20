@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import PrivacyPolicy from '@/components/PrivacyPolicy';
+import { pageUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'How Notareum Labs collects, uses, and safeguards information on notareum.com.',
-  alternates: { canonical: '/privacy-policy' },
+  alternates: { canonical: pageUrl('/privacy-policy') },
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { pageUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'About - Notareum Labs',
   description: 'Meet the team behind Notareum. Learn about our mission to build the trust layer for Web3 through open, verifiable protocols.',
+  alternates: { canonical: pageUrl('/about') },
 };
 
 const values = [
