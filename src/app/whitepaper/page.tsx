@@ -7,50 +7,55 @@ const sections = [
   {
     num: '01',
     title: 'Introduction',
-    body: 'The fragmented state of blockchain resource sharing and why a universal, verifiable standard is needed.',
+    body: 'The fragmented state of blockchain resource sharing, why a universal, verifiable standard is needed, and what changes in version 1.1.',
   },
   {
     num: '02',
     title: 'The .nota File Format',
-    body: 'Formal specification of the JSON-based container format, including schema, supported resource types, and extensibility model.',
+    body: 'Specification of the structured binary container, modeled on the architecture of PDF, that carries a signed JSON content layer. Covers object types, strict parsing, file identity, and supported resource types.',
   },
   {
     num: '03',
-    title: 'Verification Engine',
-    body: 'Decentralized validation through staking-based consensus. Covers validator selection, supermajority thresholds, dispute arbitration, and Byzantine fault tolerance.',
+    title: 'Minting and the Conformance Gate',
+    body: 'How a file is created by a mint transaction. An on-chain gate admits only content that is well-formed, authentically signed, and free of deceptive text, so every .nota file is on the registry from the moment it exists.',
   },
   {
     num: '04',
-    title: 'Token Economics',
-    body: 'Goal-oriented $NOTA distribution, adaptive minting tied to protocol milestones, and multi-faceted burning mechanics.',
+    title: 'Social Verification: The Verification Engine',
+    body: 'The optional second stage, in which staked validators reach consensus on a registered file. Covers validator tiers, quorum thresholds, staking and slashing, dispute resolution, and Byzantine fault tolerance.',
   },
   {
     num: '05',
+    title: 'Token Economics',
+    body: 'Goal-oriented $NOTA distribution, adaptive emission tied to protocol KPIs, and multi-faceted burning mechanics.',
+  },
+  {
+    num: '06',
     title: 'Use Cases & Trust Model',
     body: 'Real-world applications across DeFi, NFTs, institutional finance, and cross-chain operations.',
   },
   {
-    num: '06',
+    num: '07',
     title: 'SDK Architecture',
     body: 'Multi-platform integration layer for wallets, exchanges, and decentralized applications.',
   },
   {
-    num: '07',
+    num: '08',
     title: 'Security & Risk Assessment',
-    body: 'Threat model, Sybil resistance, validator collusion prevention, and smart contract audit framework.',
+    body: 'Risk matrix and mitigations covering smart contract exploits, validator collusion, parser differentials across SDKs, and conforming but malicious files.',
   },
 ];
 
 const keyFigures = [
-  { label: 'Protocol Notation', value: 'N = (U, V, F, \u03A3, \u0393)' },
+  { label: 'Protocol Notation', value: 'N = (U, V, F, G, \u03A3, \u0393)' },
   { label: 'Consensus Threshold', value: '>66% supermajority' },
-  { label: 'Typical File Size', value: '1 to 2KB' },
-  { label: 'Signature Algorithms', value: 'ECDSA (secp256k1), EdDSA (ed25519)' },
+  { label: 'Typical File Size', value: 'Under 2KB' },
+  { label: 'Signature Scheme', value: 'EIP-712 typed data, ERC-1271' },
 ];
 
 const citation = `Notareum Labs. "The Notareum Protocol: A Universal Transfer Interface
-for Verified Blockchain Resource Sharing." Working Paper v1.0,
-February 2026.`;
+for Verified Blockchain Resource Sharing." Working Paper v1.1,
+November 2026.`;
 
 export default function WhitepaperPage() {
   const [expanded, setExpanded] = useState<number | null>(null);
@@ -88,20 +93,20 @@ export default function WhitepaperPage() {
 
               <div className="flex-1">
                 <h2 className="font-bold text-xl mb-2" style={{ color: 'var(--text)' }}>
-                  Notareum Protocol Whitepaper v1.0
+                  Notareum Protocol Whitepaper v1.1
                 </h2>
                 <div className="flex flex-wrap gap-4 text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
-                  <span>Version: 1.0</span>
+                  <span>Version: 1.1</span>
                   <span>&#183;</span>
-                  <span>February 2026</span>
+                  <span>November 2026</span>
                   <span>&#183;</span>
                   <span>Author: Notareum Labs</span>
                   <span>&#183;</span>
-                  <span>10 pages</span>
+                  <span>15 pages</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href="/whitepaper/notareum-whitepaper-v1.0.pdf"
+                    href="/whitepaper/notareum-whitepaper-v1.1.pdf"
                     className="btn-primary w-full sm:w-auto"
                   >
                     &#8595; Download PDF
